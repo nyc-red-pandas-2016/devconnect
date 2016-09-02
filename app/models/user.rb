@@ -3,4 +3,11 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+
+  has_many :skills, through: :endorsements, source: :skills
+  belongs_to :cohort
+  has_many :responses
+  has_many :posts
+  has_many :forms_of_contact, class_name: "ContactInfo"
 end

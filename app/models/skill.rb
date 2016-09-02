@@ -1,3 +1,4 @@
 class Skill < ApplicationRecord
-  has_many :users, through: :endorsements
+  has_many :endorsements
+  has_many :endorsed, through: :endorsements
 end

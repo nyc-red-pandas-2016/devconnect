@@ -1,17 +1,45 @@
 Cohort.create(name: "Red Pandas", location: "New York", year: 2016)
+Cohort.create(name: "Salamanders", location: "New York", year: 2016)
+Cohort.create(name: "Wolves", location: "New York", year: 2016)
+#
+mentor = [true, false]
 
-User.create(email: 'peter@gmail.com', encrypted_password: 'password', first_name: 'peter', last_name: 'duke', cohort_id: 1, location: "New York", status: "Unemployed", goals: "Learn React Native", bio: "I love programming")
+5.times do
+  User.create!(email: Faker::Internet.email, password: 'password', first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, cohort_id: Cohort.all.sample.id, location: "New York", status: "Unemployed", goals: Faker::Hacker.say_something_smart, bio: Faker::Hipster.sentences(1),is_mentor: mentor.sample)
+end
 
-Skill.create(name: "Ruby")
+skills = ["Ruby", "Interview prep", "Algorithms", "Java", "Python", "React Native", "Mobile Design", "Front end design", "Javascript", "jQuery"]
 
-Endorsement.create(endorsed_id: 1, endorser_id: 1, skill_id: 1)
 
-Topic.create(name: "Nerd Life", description: "I geek all week")
+skills.each do |skill|
+  Skill.create(name: skill)
+end
 
-Post.create(user_id: 1, title: "Computers man!", content: "something about computers", postable_id: 1, postable_type: "Topic")
+10.times do
+  Endorsement.create(endorsed_id: User.all.sample.id, endorser_id: User.all.sample.id, skill_id: Skill.all.sample.id)
+end
 
-Post.create(user_id: 1, title: "Cookies and Game Night", content: "something about cookies", postable_id: 1, postable_type: "Cohort")
+topics = ["Job opportunities", "Front-End Development", "Back-End development", "Nerd Life", "Data Nerds", "Anything Interesting"]
 
-Response.create(user_id: 1, post_id: 1, content: "yeah computers man..")
+topics.each do |topic|
+  Topic.create(name: topic, description: Faker::Hipster.paragraph(2))
+end
 
-Response.create(user_id: 1, post_id: 2, content: "what are we playing?")
+15.times do
+  Post.create(user_id: User.all.sample.id, title: Faker::Hacker.say_something_smart, content: Faker::Hipster.sentences(1), postable_id: Topic.all.sample.id, postable_type: "Topic")
+end
+
+5.times do
+  Post.create(user_id: User.all.sample.id, title: Faker::Hipster.sentence, content: Faker::Hipster.sentences(1), postable_id: Cohort.all.sample.id, postable_type: "Cohort")
+end
+
+50.times do
+  Response.create(user_id: User.all.sample.id, post_id: Post.all.sample.id, content: Faker::Hipster.sentence)
+end
+
+contact_type = ["LinkedIn", "Twitter", "Facebook", "Github", "Slack"]
+10.times do
+  contact_type.each do |type|
+    ContactInfo.create(contact_type: type, contact_link: Faker::Internet.email, user_id: User.all.sample.id)
+  end
+end

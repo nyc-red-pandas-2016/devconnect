@@ -8,6 +8,5 @@ class CreateEndorsements < ActiveRecord::Migration[5.0]
     end
     add_index :endorsements, :endorser_id
     add_index :endorsements, :endorsed_id
-    add_index :endorsements, [:endorser_id, :endorsed_id], unique: true
   end
 end

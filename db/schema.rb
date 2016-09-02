@@ -26,8 +26,10 @@ ActiveRecord::Schema.define(version: 20160902161546) do
   create_table "contact_infos", force: :cascade do |t|
     t.string   "contact_type", null: false
     t.string   "contact_link", null: false
+    t.integer  "user_id",      null: false
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.index ["user_id"], name: "index_contact_infos_on_user_id", using: :btree
   end
 
   create_table "endorsements", force: :cascade do |t|
@@ -37,7 +39,6 @@ ActiveRecord::Schema.define(version: 20160902161546) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["endorsed_id"], name: "index_endorsements_on_endorsed_id", using: :btree
-    t.index ["endorser_id", "endorsed_id"], name: "index_endorsements_on_endorser_id_and_endorsed_id", unique: true, using: :btree
     t.index ["endorser_id"], name: "index_endorsements_on_endorser_id", using: :btree
     t.index ["skill_id"], name: "index_endorsements_on_skill_id", using: :btree
   end

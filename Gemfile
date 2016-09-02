@@ -31,6 +31,9 @@ gem 'jbuilder', '~> 2.5'
 #Faker
 gem 'faker'
 
+# React Rails
+gem 'react-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

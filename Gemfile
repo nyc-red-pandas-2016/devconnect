@@ -31,6 +31,9 @@ gem 'jbuilder', '~> 2.5'
 #Faker
 gem 'faker'
 
+# Use Devise
+gem 'devise'
+
 # React Rails
 gem 'react-rails'
 

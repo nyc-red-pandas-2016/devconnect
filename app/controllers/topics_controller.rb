@@ -1,13 +1,11 @@
 class TopicsController < ApplicationController
   def index
+    if request.xhr?
       @topics = Topic.all
-      render json: @topics#, include: 'posts.responses, posts.user', fields: {posts: {responses: [:content], user: [:id, :first_name]} }
+      @
+      # render json: @topics#, include: 'posts.responses, posts.user', fields: {posts: {responses: [:content], user: [:id, :first_name]} }
+    end
   end
 
-  def show
-    topic = Topic.find(params[:id])
-      posts = topic.posts
-      render json: posts
-  end
 
 end

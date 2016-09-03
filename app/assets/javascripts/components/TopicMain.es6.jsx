@@ -1,5 +1,14 @@
 class TopicMain extends React.Component {
 
+  constructor() {
+    super();
+    this.state = {
+      topics: []
+    }
+  }
+
+  
+
   render() {
     return (
       <div>

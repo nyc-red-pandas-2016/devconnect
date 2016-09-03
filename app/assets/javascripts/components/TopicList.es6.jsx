@@ -1,15 +1,24 @@
 class TopicList extends React.Component {
+
+  componentDidMount(){
+      fetch('/topics', {
+    }).then((response) => {
+      return response.json();
+    }).then((topics) => {
+      this.props.updateTopics(topics);
+    }).catch(function(err) {
+      console.log(err);
+    });
+  }
+
   render() {
     return (
       <div>
-        <ul>
-          <li>Mentoring</li>
-          <li>Job Opportunities</li>
-          <li>Hackathons</li>
-          <li>Nerd Life</li>
-          <li>Interview Pre</li>
-          <li>Computer Science concepts</li>
-        </ul>
+        {
+          this.props.topicList.map((topic, i) => {
+            return ( <Topic data={topic} key={i} />);
+          })
+        }
       </div>
     );
   }

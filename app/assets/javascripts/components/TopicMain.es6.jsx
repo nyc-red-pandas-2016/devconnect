@@ -4,6 +4,7 @@ class TopicMain extends React.Component {
     return (
       <div>
         <h1>Topics</h1>
+        <TopicList />
       </div>
     );
   }

@@ -1,5 +1,7 @@
 class ResponsesController < ApplicationController
   def index
+    @responses = Reponse.all
+    render json:@responses
   end
 
   def new

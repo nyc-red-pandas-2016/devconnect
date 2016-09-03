@@ -9,6 +9,13 @@ class PostsController < ApplicationController
   def new
   end
 
+  def create
+    post = Post.new(post_params)
+    if post.save
+      render json: post
+    end
+  end
+
   def update
   end
 
@@ -16,5 +23,10 @@ class PostsController < ApplicationController
   end
 
   def show
+  end
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :content, :postable_id, :postable_type, :user_id)
   end
 end

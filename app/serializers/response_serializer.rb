@@ -1,4 +1,5 @@
 class ResponseSerializer < ActiveModel::Serializer
-  attributes :id
-  has_one :post ,include :all
+  attributes :id, :user_id, :content
+  has_one :post
+  has_one :user
 end

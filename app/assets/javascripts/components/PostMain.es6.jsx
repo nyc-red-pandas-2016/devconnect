@@ -5,6 +5,7 @@ class PostMain extends React.Component {
       posts: [],
       topic: []
     }
+    this.updatePosts = this.updatePosts.bind(this);
   }
 
   componentDidMount(){
@@ -19,13 +20,17 @@ class PostMain extends React.Component {
     });
   }
 
+  updatePosts(post) {
+    this.setState({posts: post.posts})
+  }
 
   render() {
+    var currentUser = this.props.currentUser
     return(
       <div>
         <h1>Topic: {this.state.topic.name}</h1>
         <p>Topic Description: {this.state.topic.description}</p>
-        <PostList updatePosts={this.updatePosts} postList={this.state.posts} topic={this.state.topic}/>
+        <PostList currentUser={currentUser} updatePosts={this.updatePosts} postList={this.state.posts} topic={this.state.topic}/>
       </div>
     );
   }

@@ -12,7 +12,7 @@ class Topnav extends React.Component {
       <ul className="nav navbar-nav navbar-right">
         <li className="">
           <a href="javascript:;" className="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            image John Doe
+              <img src={this.props.img_src} />John Doe
             <span className=" fa fa-angle-down"></span>
           </a>
           <ul className="dropdown-menu dropdown-usermenu pull-right">

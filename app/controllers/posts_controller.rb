@@ -1,9 +1,14 @@
 class PostsController < ApplicationController
-  # before_filter :authenticate_user!
 
   def index
-      @posts = Post.all
-      render json:@posts
+    @topic = Topic.find(params[:topic_id]).to_json
+
+  end
+
+  def json
+    @topic = Topic.find(params[:topic_id])
+
+    render 'posts.json.jbuilder'
   end
 
   def new

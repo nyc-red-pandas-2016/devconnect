@@ -1,8 +1,8 @@
 class TopicList extends React.Component {
 
   componentDidMount(){
-      fetch('/topics', {
-    }).then((response) => {
+      fetch('/topics/json')
+      .then((response) => {
       return response.json();
     }).then((topics) => {
       this.props.updateTopics(topics);
@@ -16,7 +16,7 @@ class TopicList extends React.Component {
       <div>
         {
           this.props.topicList.map((topic, i) => {
-            return ( <Topic data={topic} key={i} />);
+            return ( <Topic data={topic} key={i} handleTopicClick={this.props.handleTopicClick} />);
           })
         }
       </div>

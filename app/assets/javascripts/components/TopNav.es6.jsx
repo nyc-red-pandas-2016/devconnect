@@ -1,5 +1,7 @@
 class Topnav extends React.Component {
   render() {
+    let {id,first_name,last_name}=this.props.current_user
+
     return (
   <div className="top_nav">
 
@@ -12,11 +14,11 @@ class Topnav extends React.Component {
       <ul className="nav navbar-nav navbar-right">
         <li className="">
           <a href="javascript:;" className="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-              <img src={this.props.img_src} />John Doe
+              <img src={this.props.img_src} /> {first_name} {last_name}
             <span className=" fa fa-angle-down"></span>
           </a>
           <ul className="dropdown-menu dropdown-usermenu pull-right">
-            <li><a href="javascript:;">  Profile</a>
+            <li><a href={`/users/${id}/show`}> Profile</a>
             </li>
             <li>
               <a href="javascript:;">

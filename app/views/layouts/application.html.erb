@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Devconnect</title>
+    <title><%= content_for?(:title) ? yield(:title) : "Devconnect"%> </title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <%= render 'shared/sidebar'  %>
+        <%= render 'shared/topnav' %>
+        <div class="right_col" role="main">
+          <%= yield %>
+        </div>
+        <%= render 'shared/footer' %>
+      </div>
+    </div>
   </body>
 </html>

@@ -17,6 +17,6 @@
 //= require components
 //= require bootstrap
 //= require custom.js
-//= require sidebarEffects.js
+
 
 //= require_tree .

@@ -11,12 +11,14 @@
 
   <body class="nav-md">
     <div class="container body">
-      <%= render 'shared/sidebar'  %>
-      <%= render 'shared/topnav' %>
+      <div class="main_container">
+        <%= render 'shared/sidebar'  %>
+        <%= render 'shared/topnav' %>
         <div class="right_col" role="main">
           <%= yield %>
         </div>
         <%= render 'shared/footer' %>
+      </div>
     </div>
   </body>
 </html>

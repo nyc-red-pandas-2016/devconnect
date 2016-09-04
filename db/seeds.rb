@@ -5,7 +5,8 @@ Cohort.create(name: "Wolves", location: "New York", year: 2016)
 mentor = [true, false]
 
 5.times do
-  User.create!(email: Faker::Internet.email, password: 'password', first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, cohort_id: Cohort.all.sample.id, location: "New York", status: "Unemployed", goals: Faker::Hacker.say_something_smart, bio: Faker::Hipster.sentences(1),is_mentor: mentor.sample)
+  cohort = Cohort.all.sample
+  User.create!(email: Faker::Internet.email, password: 'password', first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, cohort_id: cohort.id, cohort_name: cohort.name, cohort_location: cohort.location, cohort_year: cohort.year, location: "New York", status: "Unemployed", goals: Faker::Hacker.say_something_smart, bio: Faker::Hipster.sentences(1),is_mentor: mentor.sample)
 end
 
 skills = ["Ruby", "Interview prep", "Algorithms", "Java", "Python", "React Native", "Mobile Design", "Front end design", "Javascript", "jQuery"]

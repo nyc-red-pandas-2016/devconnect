@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   def index
     topic = Topic.find(params[:topic_id])
     posts = topic.posts
-      # render json: posts
+    render json: posts
       # @posts = Post.all
       # render json:@posts
   end

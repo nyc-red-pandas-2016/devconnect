@@ -6,6 +6,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :encrypted_password, null: false, default: ""
       t.string :first_name, null: false
       t.string :last_name, null: false
+      t.string :cohort_name, null: false
+      t.string :cohort_location, null: false
+      t.integer :cohort_year, null: false
       t.references :cohort, null: false
       t.string :location
       t.references :contactinfo
@@ -17,7 +20,35 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.text :experience
       t.text :bio
 
+      # <!-- <div class="field">
+      #   <%= f.label :cohortlocation %><br />
+      #   <%= f.text_field :cohortlocation, autofocus: true %>
+      # </div> -->
 
+      # <div class="field">
+      #   <%= f.label :currentlocation %><br />
+      #   <%= f.text_field :currentlocation, autofocus: true %>
+      # </div>
+      #
+      # <div class="field">
+      #   <%= f.label :mentor %><br />
+      #   <%= f.text_field :mentor, autofocus: true %>
+      # </div>
+      #
+      # <div class="field">
+      #   <%= f.label :firstskill %><br />
+      #   <%= f.text_field :firstskill, autofocus: true %>
+      # </div>
+      #
+      # <div class="field">
+      #   <%= f.label :secondskill %><br />
+      #   <%= f.text_field :secondskill, autofocus: true %>
+      # </div>
+      #
+      # <div class="field">
+      #   <%= f.label :thridskill %><br />
+      #   <%= f.text_field :thirdskill, autofocus: true %>
+      # </div>
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at

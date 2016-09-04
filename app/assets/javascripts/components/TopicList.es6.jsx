@@ -3,7 +3,6 @@ class TopicList extends React.Component {
   componentDidMount(){
       fetch('/topics', {
     }).then((response) => {
-      debugger;
       return response.json();
     }).then((topics) => {
       this.props.updateTopics(topics);

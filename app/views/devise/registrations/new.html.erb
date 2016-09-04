@@ -4,9 +4,52 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name, autofocus: true %>
+  </div>
+
+
+<div class="field">
+  <%= f.label :location %><br />
+  <%= f.text_field :location, autofocus: true %>
+</div>
+
+<!-- <div class="field">
+  <%= f.label :are_you_mentor %><br />
+  <%= f.text_field :is_mentor, autofocus: true %>
+</div> -->
+
+<div class="field">
+  <%= f.label :are_you_mentor %><br />
+  <%= f.check_box :is_mentor%>
+</div>
+
+  <div class="field">
+    <%= f.label :cohort_name %><br />
+    <%= f.select :status, @cohortsnames %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cohort_location %><br />
+    <%= f.select :status, @cohortslocations %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cohort_year %><br />
+    <%= f.select :status, @cohortsyears %>
+  </div>
+
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
+
 
   <div class="field">
     <%= f.label :password %>

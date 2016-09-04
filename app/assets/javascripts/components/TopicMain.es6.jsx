@@ -4,7 +4,7 @@ class TopicMain extends React.Component {
     return (
       <div>
         <h1>Topics</h1>
-        <TopicList topicList={this.props.topicState} updateTopics={this.props.updateTopics}/>
+        <TopicList handleTopicClick={this.props.topicClick} topicList={this.props.topicState} updateTopics={this.props.updateTopics}/>
       </div>
     );
   }

@@ -13,7 +13,7 @@ class TopicList extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="row">
         {
           this.props.topicList.map((topic, i) => {
             return ( <Topic data={topic} key={i} handleTopicClick={this.props.handleTopicClick} />);

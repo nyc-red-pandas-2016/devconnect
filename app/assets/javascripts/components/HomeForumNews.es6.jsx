@@ -10,8 +10,7 @@ class HomeForumNews extends React.Component {
               <p className="month">August</p>
             </div>
             <div className="message_wrapper">
-              <h4 className="heading">Dev Bootcamp</h4>
-              <blockquote className="message">A Day in the Life of a Dev Bootcamp student</blockquote><br />
+              <h4 className="heading">A Day in the Life of a Dev Bootcamp student</h4>
               <blockquote className="message">A day at Dev Bootcamp is far different than any school or educational institution you’ve experienced. Some describe it as organized chaos, others as having a summer camp feel. At Dev Bootcamp we like to think of the inclusive learning environment at each of our campuses as a simulation for what it’s like to...</blockquote>
               <br />
               <p className="url">

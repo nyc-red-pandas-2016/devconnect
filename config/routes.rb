@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'forums/index' => "forums#index"
   get 'topics/json' => 'topics#json'
   get 'topics/:topic_id/posts/json' => 'posts#json'
+  get '/topics/:topic_id/posts/:post_id/responses/json' => 'responses#json'
 
   # resources :topics, :only=> [:index]
   # resources :responses

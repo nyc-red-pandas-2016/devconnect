@@ -1,5 +1,6 @@
 class HomeForumRecentList extends React.Component {
   render() {
+    var post_count = 0
     return(
       <table className="data table table-striped no-margin">
         <thead>
@@ -12,7 +13,12 @@ class HomeForumRecentList extends React.Component {
           </tr>
         </thead>
         <tbody>
-          <HomeForumRecentPost />
+          {
+            this.props.recent.map((post, i) => {
+              post_count += 1
+              return (<HomeForumRecentPost post_count={post_count} data={post} key={i}/>)
+            })
+          }
         </tbody>
       </table>
     );

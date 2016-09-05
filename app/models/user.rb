@@ -10,4 +10,6 @@ class User < ApplicationRecord
   has_many :responses
   has_many :posts
   has_many :forms_of_contact, class_name: "ContactInfo"
+
+  validates :first_name, :last_name, :cohort_name, :cohort_location, :cohort_year, presence: true
 end

@@ -7,6 +7,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :first_name, null: false
       t.string :last_name, null: false
       t.references :cohort, null: false
+      t.string :cohort_name, null: false
+      t.string :cohort_location, null: false
+      t.integer :cohort_year, null: false
       t.string :location
       t.references :contactinfo
       t.string :status

@@ -1,24 +1,74 @@
 <h2>Sign up</h2>
+<ul>
+  <% if flash[:error] %>
+    <% flash[:error].each do |error| %>
+    <li><%= error %></li>
+    <% end %>
+  <% end %>
+</ul>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name, autofocus: true, required:true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name, autofocus: true, required:true %>
+  </div>
+
+
+<div class="field">
+  <%= f.label :location %><br />
+  <%= f.text_field :location, autofocus: true %>
+</div>
+
+<!-- <div class="field">
+  <%= f.label :are_you_mentor %><br />
+  <%= f.text_field :is_mentor, autofocus: true %>
+</div> -->
+
+<div class="field">
+  <%= f.label :are_you_mentor %><br />
+  <%= f.check_box :is_mentor%>
+</div>
+
+  <div class="field">
+    <%= f.label :cohort_name %><br />
+    <%= f.select :cohort_name, @cohortsnames %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cohort_location %><br />
+    <%= f.select :cohort_location, @cohortslocations %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cohort_year %><br />
+    <%= f.select :cohort_year, @cohortsyears %>
+  </div>
+
 
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
 
+
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off", required:true %>
   </div>
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", required:true %>
   </div>
 
   <div class="actions">

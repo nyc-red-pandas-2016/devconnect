@@ -23,7 +23,7 @@ class Profile extends React.Component{
   }
 
   render(){
-
+    console.log(this.state.skills)
     return(
       <div>
           {/* this will display the page title */}
@@ -62,6 +62,7 @@ class Profile extends React.Component{
          {/* user stats skills bages */}
          <div className="row">
               <Profilestats />
+              <Profilebadges />
          </div>
       </div>
     )

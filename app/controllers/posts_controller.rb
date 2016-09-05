@@ -2,7 +2,6 @@ class PostsController < ApplicationController
 
   def index
     @topic = Topic.find(params[:topic_id]).to_json
-
   end
 
   def json

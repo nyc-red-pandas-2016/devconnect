@@ -4,7 +4,7 @@ class Post extends React.Component {
     return (
       <div>
         <ul>
-          <li>Post: {this.props.postData.title}</li>
+          <li><a href={`/topics/${this.props.topicData.id}/posts/${this.props.postData.id}/responses`}>Post: {this.props.postData.title}</a></li>
           <li>Author: {this.props.userData.first_name}</li>
         </ul>
       </div>

@@ -8,7 +8,9 @@
     <%= javascript_include_tag 'application' %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
-
+  <% flash.each do |value| %>
+     <div align="center" id="flash" class="alert"><%= value %></div>
+  <% end %>
   <body class="nav-md">
     <div class="container body">
       <div class="main_container">

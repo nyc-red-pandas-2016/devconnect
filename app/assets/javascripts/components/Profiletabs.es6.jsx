@@ -1,8 +1,14 @@
 class Profiletabs extends React.Component{
 
   render(){
-    let bio = this.props.dataBio
-    let posts = this.props.dataPosts
+    let bio = this.props.dataBio;
+    let posts = this.props.dataPosts;
+
+
+    // going to write a RegExp to get the  day and month out of json
+    var month = new RegExp('');
+
+
     console.log(posts)
     return(
       <div className="col-md-9 col-sm-9 col-xs-12">
@@ -90,20 +96,28 @@ class Profiletabs extends React.Component{
                   <ul className="messages">
                 {posts.map((post,index)=>{
                   return(
-                    <li key="index">
-                    <h4 >{post.title}</h4>
-                    <p >{post.content}</p>
+                    <li key={index}>
+                      <img src="https://s-media-cache-ak0.pinimg.com/236x/40/00/d7/4000d7ed061f540a0180b6181184686d.jpg" className="avatar" alt="Avatar"/>
+                      <div className="message_date">
+                        <h3 className="date text-info">24</h3>
+                        <p className="month">May</p>
+                      </div>
+                      <div className="message_wrapper">
+                      <h4 className="heading" ><a href={`/topics/${post.postable_id}/posts/${post.id}/responses`}>{post.title}</a></h4>
+                      <blockquote className="message">{post.content}</blockquote>
+                      </div>
+                      <br />
+                      {/* <p className="url">
+                        <span className="fs1 text-info" aria-hidden="true" data-icon=""></span>
+                        <a href="#"><i className="fa fa-paperclip"></i> User Acceptance Test.doc </a>
+                      </p> */}
                     </li>
                   )
                 })}
                 </ul>
                 {/* <ul className="messages">
                   <li>
-                    <img src="images/img.jpg" className="avatar" alt="Avatar"/>
-                    <div className="message_date">
-                      <h3 className="date text-info">24</h3>
-                      <p className="month">May</p>
-                    </div>
+
                     <div className="message_wrapper">
                       <h4 className="heading">Desmond Davison</h4>
                       <blockquote className="message">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth.</blockquote>

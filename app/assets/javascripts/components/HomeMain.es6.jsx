@@ -26,7 +26,6 @@ class HomeMain extends React.Component {
         <h4>Welcome to DevConnect!</h4>
           <HomeForum trending={this.state.topTrending} recent={this.state.mostRecent}/>
           <p>HomeMentor</p>
-          <p>HomeNews</p>
       </div>
     );
   }

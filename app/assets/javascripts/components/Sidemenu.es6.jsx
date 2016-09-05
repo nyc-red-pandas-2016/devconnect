@@ -1,5 +1,6 @@
 class Sidemenu extends React.Component {
   render() {
+    let {id,first_name,last_name}=this.props.current_user
     return (
         <div className="col-md-3 left_col">
           <div className="left_col scroll-view">
@@ -17,7 +18,7 @@ class Sidemenu extends React.Component {
               </div>
               <div className="profile_info">
                 <span>Welcome,</span>
-                <h2>John Doe</h2>
+                <h2>{first_name} {last_name}</h2>
               </div>
             </div>
             {/* <!-- /menu profile quick info --> */}
@@ -32,7 +33,7 @@ class Sidemenu extends React.Component {
                 <ul className="nav side-menu">
                   <li><a><i className="fa fa-user"></i> User <span className="fa fa-chevron-down"></span></a>
                     <ul className="nav child_menu" style={{"display": "none"}}>
-                      <li><a href="index.html">Profile</a>
+                      <li><a href={`/users/${id}/show`}>Profile</a>
                       </li>
                       <li><a href="index2.html">Cohort</a>
                       </li>
@@ -51,7 +52,7 @@ class Sidemenu extends React.Component {
                       </li>
                       <li><a>Topics<span className="fa fa-chevron-down"></span></a>
                         <ul className="nav child_menu" style={{"display": "none"}}>
-                          <li className="sub_menu"><a href="level2.html">Index</a>
+                          <li className="sub_menu"><a href="/topics">Index</a>
                           </li>
                           <li><a href="#level2_1">Link</a>
                           </li>

@@ -10,7 +10,8 @@ class PostMain extends React.Component {
 
   componentDidMount(){
     var topicID = JSON.parse(this.props.topic).id
-      fetch(`/topics/${topicID}/posts/json`)
+    
+    fetch(`/topics/${topicID}/posts/json`)
       .then((response) => {
       return response.json();
     }).then((response) => {

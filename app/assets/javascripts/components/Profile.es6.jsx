@@ -2,15 +2,28 @@ class Profile extends React.Component{
   constructor(){
     super();
       this.state={
-        users: []
+        users: [],
+        bio:'',
+        posts:[],
+        skills:[]
       }
   }
   componentDidMount(){
-    this.setState({
-      users: JSON.parse(this.props.user)
+    axios('/users/data/json').then((response)=>{
+      let user = response.data
+      this.setState({
+        users:user,
+        bio:user.bio,
+        posts:user.posts,
+        skills:user.skills
+      })
+    }).catch((errors)=>{
+      console.log(errors)
     })
   }
+
   render(){
+
     return(
       <div>
         {/* this will display the page title */}
@@ -21,7 +34,7 @@ class Profile extends React.Component{
          <div className="col-md-12 col-sm-12 col-xs-12">
             <div className="x_panel">
             <div className="x_title">
-              <h2>User Report <small>Activity report</small></h2>
+              <h2>Welcome to Devconnect </h2>
               <ul className="nav navbar-right panel_toolbox">
                 <li><a className="collapse-link"><i className="fa fa-chevron-up"></i></a>
                 </li>
@@ -42,7 +55,7 @@ class Profile extends React.Component{
               <div className="x_content">
                {/* display the profile stats */}
                 <ProfileStats data={this.state.users} />
-                <Profiletabs />
+                <Profiletabs dataBio={this.state.bio} dataPosts={this.state.posts}/>
                 </div>
             </div>
         </div>

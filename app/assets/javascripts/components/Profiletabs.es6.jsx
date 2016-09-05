@@ -1,90 +1,25 @@
 class Profiletabs extends React.Component{
+
   render(){
+    let bio = this.props.dataBio
+    let posts = this.props.dataPosts
+    console.log(posts)
     return(
       <div className="col-md-9 col-sm-9 col-xs-12">
 
         <div className="" role="tabpanel" data-example-id="togglable-tabs">
           <ul id="myTab" className="nav nav-tabs bar_tabs" role="tablist">
-            <li role="presentation" className="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Recent Activity</a>
+            <li role="presentation" className="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Information</a>
             </li>
             <li role="presentation" className=""><a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Projects Worked on</a>
             </li>
-            <li role="presentation" className=""><a href="#tab_content3" role="tab" id="profile-tab2" data-toggle="tab" aria-expanded="false">Profile</a>
+            <li role="presentation" className=""><a href="#tab_content3" role="tab" id="profile-tab2" data-toggle="tab" aria-expanded="false">My Posts</a>
             </li>
           </ul>
           <div id="myTabContent" className="tab-content">
             <div role="tabpanel" className="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
-
-              {/* <!-- start recent activity --> */}
-              <ul className="messages">
-                <li>
-                  <img src="images/img.jpg" className="avatar" alt="Avatar"/>
-                  <div className="message_date">
-                    <h3 className="date text-info">24</h3>
-                    <p className="month">May</p>
-                  </div>
-                  <div className="message_wrapper">
-                    <h4 className="heading">Desmond Davison</h4>
-                    <blockquote className="message">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth.</blockquote>
-                    <br />
-                    <p className="url">
-                      <span className="fs1 text-info" aria-hidden="true" data-icon=""></span>
-                      <a href="#"><i className="fa fa-paperclip"></i> User Acceptance Test.doc </a>
-                    </p>
-                  </div>
-                </li>
-                <li>
-                  <img src="images/img.jpg" className="avatar" alt="Avatar"/>
-                  <div className="message_date">
-                    <h3 className="date text-error">21</h3>
-                    <p className="month">May</p>
-                  </div>
-                  <div className="message_wrapper">
-                    <h4 className="heading">Brian Michaels</h4>
-                    <blockquote className="message">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth.</blockquote>
-                    <br />
-                    <p className="url">
-                      <span className="fs1" aria-hidden="true" data-icon=""></span>
-                      <a href="#" data-original-title="">Download</a>
-                    </p>
-                  </div>
-                </li>
-                <li>
-                  <img src="images/img.jpg" className="avatar" alt="Avatar"/>
-                  <div className="message_date">
-                    <h3 className="date text-info">24</h3>
-                    <p className="month">May</p>
-                  </div>
-                  <div className="message_wrapper">
-                    <h4 className="heading">Desmond Davison</h4>
-                    <blockquote className="message">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth.</blockquote>
-                    <br />
-                    <p className="url">
-                      <span className="fs1 text-info" aria-hidden="true" data-icon=""></span>
-                      <a href="#"><i className="fa fa-paperclip"></i> User Acceptance Test.doc </a>
-                    </p>
-                  </div>
-                </li>
-                <li>
-                  <img src="images/img.jpg" className="avatar" alt="Avatar"/>
-                  <div className="message_date">
-                    <h3 className="date text-error">21</h3>
-                    <p className="month">May</p>
-                  </div>
-                  <div className="message_wrapper">
-                    <h4 className="heading">Brian Michaels</h4>
-                    <blockquote className="message">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth.</blockquote>
-                    <br />
-                    <p className="url">
-                      <span className="fs1" aria-hidden="true" data-icon=""></span>
-                      <a href="#" data-original-title="">Download</a>
-                    </p>
-                  </div>
-                </li>
-
-              </ul>
-              {/* <!-- end recent activity --> */}
-
+                <h4>Bio</h4>
+                {bio}
             </div>
             <div role="tabpanel" className="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
 
@@ -150,8 +85,86 @@ class Profiletabs extends React.Component{
 
             </div>
             <div role="tabpanel" className="tab-pane fade" id="tab_content3" aria-labelledby="profile-tab">
-              <p>xxFood truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui
-                photo booth letterpress, commodo enim craft beer mlkshk </p>
+                {/* <!-- start recent activity --> */}
+
+                  <ul className="messages">
+                {posts.map((post,index)=>{
+                  return(
+                    <li key="index">
+                    <h4 >{post.title}</h4>
+                    <p >{post.content}</p>
+                    </li>
+                  )
+                })}
+                </ul>
+                {/* <ul className="messages">
+                  <li>
+                    <img src="images/img.jpg" className="avatar" alt="Avatar"/>
+                    <div className="message_date">
+                      <h3 className="date text-info">24</h3>
+                      <p className="month">May</p>
+                    </div>
+                    <div className="message_wrapper">
+                      <h4 className="heading">Desmond Davison</h4>
+                      <blockquote className="message">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth.</blockquote>
+                      <br />
+                      <p className="url">
+                        <span className="fs1 text-info" aria-hidden="true" data-icon=""></span>
+                        <a href="#"><i className="fa fa-paperclip"></i> User Acceptance Test.doc </a>
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="images/img.jpg" className="avatar" alt="Avatar"/>
+                    <div className="message_date">
+                      <h3 className="date text-error">21</h3>
+                      <p className="month">May</p>
+                    </div>
+                    <div className="message_wrapper">
+                      <h4 className="heading">Brian Michaels</h4>
+                      <blockquote className="message">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth.</blockquote>
+                      <br />
+                      <p className="url">
+                        <span className="fs1" aria-hidden="true" data-icon=""></span>
+                        <a href="#" data-original-title="">Download</a>
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="images/img.jpg" className="avatar" alt="Avatar"/>
+                    <div className="message_date">
+                      <h3 className="date text-info">24</h3>
+                      <p className="month">May</p>
+                    </div>
+                    <div className="message_wrapper">
+                      <h4 className="heading">Desmond Davison</h4>
+                      <blockquote className="message">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth.</blockquote>
+                      <br />
+                      <p className="url">
+                        <span className="fs1 text-info" aria-hidden="true" data-icon=""></span>
+                        <a href="#"><i className="fa fa-paperclip"></i> User Acceptance Test.doc </a>
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="images/img.jpg" className="avatar" alt="Avatar"/>
+                    <div className="message_date">
+                      <h3 className="date text-error">21</h3>
+                      <p className="month">May</p>
+                    </div>
+                    <div className="message_wrapper">
+                      <h4 className="heading">Brian Michaels</h4>
+                      <blockquote className="message">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth.</blockquote>
+                      <br />
+                      <p className="url">
+                        <span className="fs1" aria-hidden="true" data-icon=""></span>
+                        <a href="#" data-original-title="">Download</a>
+                      </p>
+                    </div>
+                  </li>
+
+                </ul> */}
+                {/* <!-- end recent activity --> */}
             </div>
           </div>
         </div>

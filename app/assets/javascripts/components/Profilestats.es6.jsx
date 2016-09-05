@@ -1,6 +1,7 @@
 class ProfileStats extends React.Component{
   render(){
-    let {id,first_name,last_name,bio} = this.props.data
+    let {id,first_name,last_name,location,status,is_mentor} = this.props.data
+
     return(
                 <div className="col-md-3 col-sm-3 col-xs-12 profile_left">
 
@@ -9,9 +10,7 @@ class ProfileStats extends React.Component{
                     {/* <!-- end of image cropping --> */}
                     <div id="crop-avatar">
                       {/* <!-- Current avatar --> */}
-                      <img className="img-responsive avatar-view" src="images/picture.jpg" alt="Avatar" title="Change the avatar"/>
-
-
+                      <img className="img-responsive avatar-view" src="https://s-media-cache-ak0.pinimg.com/236x/40/00/d7/4000d7ed061f540a0180b6181184686d.jpg" alt="Avatar" title="Change the avatar"/>
 
                       {/* <!-- Loading state --> */}
                       <div className="loading" aria-label="Loading" role="img" tabIndex="-1"></div>
@@ -22,16 +21,16 @@ class ProfileStats extends React.Component{
                   <h3>{first_name} {last_name}</h3>
 
                   <ul className="list-unstyled user_data">
-                    <li><i className="fa fa-map-marker user-profile-icon"></i> San Francisco, California, USA
+                    <li><i className="fa fa-map-marker user-profile-icon"></i> {location}
                     </li>
 
                     <li>
-                      <i className="fa fa-briefcase user-profile-icon"></i> Software Engineer
+                      <i className="fa fa-briefcase user-profile-icon"></i> {status}
                     </li>
 
                     <li className="m-top-xs">
-                      <i className="fa fa-external-link user-profile-icon"></i>
-                      <a href="http://www.kimlabs.com/profile/" target="_blank">www.kimlabs.com</a>
+                      <i className="fa fa-coffee"></i>
+                      Mentoring: { is_mentor ? "Yes" : "Not at the moment" }
                     </li>
                   </ul>
 
@@ -39,7 +38,8 @@ class ProfileStats extends React.Component{
                   <br />
 
                   {/* <!-- start skills --> */}
-                  <h4>Skills</h4>
+                  
+                  {/* <h4>Skills</h4>
                   <ul className="list-unstyled user_data">
                     <li>
                       <p>Web Applications</p>
@@ -65,7 +65,7 @@ class ProfileStats extends React.Component{
                         <div className="progress-bar bg-green" role="progressbar" data-transitiongoal="50"></div>
                       </div>
                     </li>
-                  </ul>
+                  </ul> */}
                   {/* <!-- end of skills --> */}
 
                 </div>

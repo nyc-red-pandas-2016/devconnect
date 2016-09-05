@@ -46,6 +46,7 @@ GEM
     arel (7.1.1)
     autoprefixer-rails (6.4.1)
       execjs
+    axios_rails (0.7.0)
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
@@ -227,6 +228,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers
+  axios_rails
   better_errors
   bootstrap-sass (~> 3.3.6)
   byebug

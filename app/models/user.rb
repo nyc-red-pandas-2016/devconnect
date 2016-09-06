@@ -15,6 +15,7 @@ class User < ApplicationRecord
 
   validates :first_name, :last_name, :cohort_name, :cohort_location, :cohort_year, presence: true
 
+
   # This method associates the attribute ":avatar" with a file attachment
  has_attached_file :avatar, styles: {
    thumb: '100x100>',

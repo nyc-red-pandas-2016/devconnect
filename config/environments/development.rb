@@ -12,14 +12,18 @@ Rails.application.configure do
   #     }
   #   }
 
-  config.paperclip_defaults = {
-  storage: :s3,
-  s3_credentials: {
-    bucket: ENV['dbcfinalproject'],
-    access_key_id: ENV['AKIAJ53VCGVJPZMKATEA'],
-    secret_access_key: ENV['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']
-  }
-}
+    Paperclip.options[:command_path] = "/usr/local/bin/convert"
+
+  #   config.paperclip_defaults = {
+  #   storage: :s3,
+  #   s3_credentials: {
+  #     bucket: 'dbcfinalproject',
+  #     access_key_id: 'AKIAIYO4DDDIONK6BHKQ',
+  #     secret_access_key: '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',
+  #     s3_region: 'Oregon'
+  #     # s3_host_name: 'dbcfinalproject.s3-website-us-west-2.amazonaws.com'
+  #   }
+  # }
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development

@@ -15,9 +15,11 @@ Rails.application.configure do
   config.paperclip_defaults = {
   storage: :s3,
   s3_credentials: {
-    bucket: ENV['dbcfinalproject'],
-    access_key_id: ENV['AKIAJ53VCGVJPZMKATEA'],
-    secret_access_key: ENV['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']
+    bucket: 'dbcfinalproject',
+    access_key_id: 'AKIAJ53VCGVJPZMKATEA',
+    secret_access_key: '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',
+    s3_region: 'Oregon'
+    # s3_host_name: 's3-website-us-east-1.amazonaws.com'
   }
 }
   # Code is not reloaded between requests.

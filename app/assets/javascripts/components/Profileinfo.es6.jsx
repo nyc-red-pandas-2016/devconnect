@@ -36,8 +36,8 @@ class Profileinfo extends React.Component{
                     {/* <!-- end of image cropping --> */}
                     <div id="crop-avatar">
                       {/* <!-- Current avatar --> */}
-                      <img className="img-responsive avatar-view" src="https://s-media-cache-ak0.pinimg.com/236x/40/00/d7/4000d7ed061f540a0180b6181184686d.jpg" alt="Avatar" title="Change the avatar"/>
-
+                      {/*<img className="img-responsive avatar-view" src= alt="Avatar" title="Change the avatar"/>*/}
+                      <img className="img-responsive avatar-view" src={this.props.data.length ? this.props.data.avatar : "https://s-media-cache-ak0.pinimg.com/236x/40/00/d7/4000d7ed061f540a0180b6181184686d.jpg"} alt="Avatar" title="Change the avatar"/>
                       {/* <!-- Loading state --> */}
                       <div className="loading" aria-label="Loading" role="img" tabIndex="-1"></div>
                     </div>

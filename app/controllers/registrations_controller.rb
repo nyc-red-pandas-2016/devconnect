@@ -74,6 +74,11 @@ class RegistrationsController < Devise::RegistrationsController
 
       end
     end
+# =======
+#     # super
+#     current_user.update(avatar_file_name: params[:user][:avatar].original_filename, avatar_content_type: params[:user][:avatar].content_type)
+#     redirect_to "/users/#{current_user.id}/show"
+# >>>>>>> installed paperclip but cannot get to work
   end
 
     def edit
@@ -111,7 +116,7 @@ class RegistrationsController < Devise::RegistrationsController
 
 
   def sign_up_params
-    params.require(:user).permit(:first_name, :last_name, :cohort_name, :cohort_year, :cohort_location, :email, :is_mentor, :location, :password, :password_confirmation)
+    params.require(:user).permit(:first_name, :last_name, :cohort_name, :cohort_year, :cohort_location, :email, :is_mentor, :location, :password, :password_confirmation, :avatar)
   end
 
 

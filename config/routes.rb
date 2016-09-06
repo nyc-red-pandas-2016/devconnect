@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   post '/users/requestmentor' => "users#request_mentor"
   get '/users/avatar' => 'users#avatar', as: :user
+  get '/users/avatar' => 'users#avatar'
 
 
   get 'forums/index' => "forums#index"

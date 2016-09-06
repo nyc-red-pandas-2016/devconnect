@@ -1,14 +1,19 @@
-<h2>Log in</h2>
+<div id="wrapper">
+  <div class="login_wrapper">
 
+
+  <div id="login" class="animate form">
+    <section class="login_content">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<h1>Log in</h1>
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email, autofocus: true, class:"form-control"%>
   </div>
 
   <div class="field">
     <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off",class:"form-control" %>
   </div>
 
   <% if devise_mapping.rememberable? -%>
@@ -19,8 +24,21 @@
   <% end -%>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+      <br/>
+    <%= f.submit "Log in", class:"btn btn-default submit" %>
+    <%= render "devise/shared/links" %>
   </div>
+
 <% end %>
 
-<%= render "devise/shared/links" %>
+    <div>
+        <div class="clearfix"></div>
+    <div class="separator">
+    <h2><i class="fa fa-share-alt" style="font-size: 26px;"></i> Devconnect</h2>
+    <p>©2016 All Rights Reserved. Devconnect</p>
+    </div>
+    </div>
+    </section>
+    </div>
+  </div>
+</div>

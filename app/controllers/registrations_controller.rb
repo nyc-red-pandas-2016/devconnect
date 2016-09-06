@@ -35,7 +35,16 @@ class RegistrationsController < Devise::RegistrationsController
     end
 
   def update
-    super
+
+    update_resource(current_user, account_update_params)
+binding.pry
+    if current_user.save
+      redirect_to '/home/index'
+    else
+      flash[:error] = current_user.errors.full_messages
+      redirect_to '/users/edit'
+    end
+    # super
   end
 
   private
@@ -48,6 +57,16 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def account_update_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :current_password)
+    params.require(:user).permit(:location, :status, :place_of_work, :position, :goals, :experience, :bio, :email, :password, :password_confirmation, :current_password, contact_info_attributes: [:user_id, :contact_type, :contact_link, :id])
+
+    # params.require(:contact_info).permit(:contact_type, :contact_link)
   end
+
+  # def contact_info_params
+  #   params[:user][:contact_info]
+  # end
+  # def contact_info_update_params
+  #
+  #   binding.pry
+  # end
 end

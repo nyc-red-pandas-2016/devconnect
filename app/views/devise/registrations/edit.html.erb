@@ -1,7 +1,61 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
+<ul>
+  <% if flash[:error] %>
+    <% flash[:error].each do |error| %>
+    <li><%= error %></li>
+    <% end %>
+  <% end %>
+</ul>
+
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
+
+  <!-- <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.email_field :first_name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.email_field :last_name, autofocus: true %>
+  </div> -->
+
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.text_field :location, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :professional_status %><br />
+    <%= f.text_field :status, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :place_of_work %><br />
+    <%= f.text_field :place_of_work, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :position %><br />
+    <%= f.text_field :position, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :goals %><br />
+    <%= f.text_field :goals, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :experience %><br />
+    <%= f.text_field :experience, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :bio %><br />
+    <%= f.text_field :bio, autofocus: true %>
+  </div>
+
 
   <div class="field">
     <%= f.label :email %><br />
@@ -21,15 +75,28 @@
     <% end %>
   </div>
 
+
+
+
+
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
   <div class="field">
+    <%= f.fields_for :contact_info do |a| %>
+    <%= a.hidden_field :user_id, value: current_user.id
+       <%= a.label :contact_type %>
+       <%= a.text_field :contact_type %>
+       <%= a.label :contact_link %>
+       <%= a.text_field :contact_link %>
+      <% end %>
+    </div>
+  <!-- <div class="field">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
+  </div> -->
 
   <div class="actions">
     <%= f.submit "Update" %>

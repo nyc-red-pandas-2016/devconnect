@@ -7,4 +7,10 @@ class UsersController < ApplicationController
   def show
     @user = current_user.to_json
   end
+
+  def request_mentor
+    binding.pry
+    @user = current_user
+    RequestMentorMailer.sample_email(@user).deliver
+  end
 end

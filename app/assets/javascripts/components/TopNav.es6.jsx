@@ -1,4 +1,12 @@
 class Topnav extends React.Component {
+
+  logout(e){
+    e.preventDefault();
+    axios.delete('/users/sign_out').catch((error)=>{
+      console.log(error)
+    })
+  }
+
   render() {
     let {id,first_name,last_name}=this.props.current_user
 
@@ -29,7 +37,7 @@ class Topnav extends React.Component {
             <li>
               <a href="javascript:;">Help</a>
             </li>
-            <li><a href="login.html"><i className="fa fa-sign-out pull-right"></i> Log Out</a>
+            <li><a href={'/users/sign_out'} onClick={this.logout.bind(this)}><i className="fa fa-sign-out pull-right"></i> Log Out</a>
             </li>
           </ul>
         </li>

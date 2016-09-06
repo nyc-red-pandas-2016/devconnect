@@ -26,6 +26,11 @@ class UsersController < ApplicationController
     RequestMentorMailer.sample_email(@user, @mentor).deliver
   end
 
+  def avatar
+    @user = current_user
+    render '/users/testpaperclip'
+  end
+  
   private
   def find_user
     User.find(params[:id])

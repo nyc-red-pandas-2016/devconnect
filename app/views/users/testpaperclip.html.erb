@@ -1,0 +1,27 @@
+<!--
+<div>
+<%= form_for @user, url: '/users', html: { multipart: true, method: "PATCH" } do |form| %>
+  <%= form.file_field :avatar %>
+<% end %>
+</div>
+
+<%= image_tag @user.avatar.url(:square) %> -->
+
+
+<%= form_for(@user, url: {edit_user_registration(@user)} html: {multipart: true}) do |f| %>
+  <ul>
+  <% @user.errors.full_messages.each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+  </ul>
+  <p>
+    <% if @user.avatar.exists? %>
+      <%= image_tag @user.avatar.url %><br />
+    <% end %>
+    <%= f.label :avatar, "Attach an Image" %><br />
+    <%= f.file_field :avatar %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

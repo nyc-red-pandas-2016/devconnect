@@ -128,7 +128,7 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def account_update_params
-    params.require(:user).permit(:id, :location, :status, :place_of_work, :position, :goals, :experience, :bio, :email, :is_mentor, :password, :password_confirmation, :current_password, forms_of_contact_attributes: [:contact_type, :contact_link,:user_id, :id])
+    params.require(:user).permit(:id, :location, :status, :place_of_work, :position, :goals, :experience, :bio, :email, :is_mentor, :password, :password_confirmation, :current_password, :avatar, forms_of_contact_attributes: [:contact_type, :contact_link,:user_id, :id])
   end
 
   def contact_delete_params

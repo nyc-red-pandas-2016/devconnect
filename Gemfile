@@ -14,6 +14,10 @@ gem 'uglifier', '>= 1.3.0'
 # gemwinplatform
  gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
+ # Paperclip gem
+ gem 'paperclip'
+ gem 'aws-sdk', '~> 2.3'
+
 # axios
  gem 'axios_rails'
 

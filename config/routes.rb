@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   get '/mentors/search' => "mentors#search"
 
   post '/users/requestmentor' => "users#request_mentor"
+  get '/users/avatar' => 'users#avatar', as: :user
+
+
   get 'forums/index' => "forums#index"
   get 'topics/json' => 'topics#json'
   get 'topics/:topic_id/posts/json' => 'posts#json'

@@ -62,13 +62,16 @@ class Profileinfo extends React.Component{
 
                   { this.props.dataOther==this.props.dataCurrent ?
                   <a href={`/users/edit`} className="btn btn-success"><i className="fa fa-edit m-right-xs"></i>Edit Profile</a>
+                  {/*Upload avatar*/}
+                  <a href='/users/avatar' className="btn btn-success"><i className="fa fa-edit m-right-xs"></i>Upload Profile Photo</a>
+                  <br />
                     :
                     <p></p>
                   }
 
                   <a onClick={this.handleRequestMentor.bind(this)} ref='profileData' className="btn btn-success"><i className="fa fa-edit m-right-xs"></i>Request Mentor</a>
 
-                  <br />
+
 
                   {/* <!-- start skills --> */}
 

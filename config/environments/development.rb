@@ -1,6 +1,26 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # Paperclip configuration
+  # config.paperclip_defaults = {
+  #   storage: :s3,
+  #   s3_credentials: {
+  #     bucket: ENV.fetch('dbcfinalproject'),
+  #     access_key_id: ENV.fetch('AKIAJ53VCGVJPZMKATEA'),
+  #     secret_access_key: ENV.fetch('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'),
+  #     s3_region: ENV.fetch('oregon'),
+  #     }
+  #   }
+
+  config.paperclip_defaults = {
+  storage: :s3,
+  s3_credentials: {
+    bucket: ENV['dbcfinalproject'],
+    access_key_id: ENV['AKIAJ53VCGVJPZMKATEA'],
+    secret_access_key: ENV['eptLdzq16F2VKKkyiYDRZ6YTkgjsA38Cpy7CqUim']
+  }
+}
+
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
@@ -47,6 +67,8 @@ Rails.application.configure do
 
   # Suppress logger output for asset requests.
   config.assets.quiet = true
+
+
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true

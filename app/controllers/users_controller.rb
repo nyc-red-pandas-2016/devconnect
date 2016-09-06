@@ -9,8 +9,10 @@ class UsersController < ApplicationController
   end
 
   def request_mentor
-    binding.pry
+    mentor_id = params[:mentor_id].scan(/\d/)[0].to_i
+    @mentor = User.find(mentor_id)
+    # binding.pry
     @user = current_user
-    RequestMentorMailer.sample_email(@user).deliver
+    RequestMentorMailer.sample_email(@user, @mentor).deliver
   end
 end

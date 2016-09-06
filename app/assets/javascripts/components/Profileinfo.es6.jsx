@@ -4,11 +4,25 @@ class Profileinfo extends React.Component{
     event.preventDefault();
     var profile_regex = RegExp(/users.*([^/]+)?$/)
     var mentor = profile_regex.exec(this.refs.profileData.baseURI)[0]
-    
+
+    fetch('/users/requestmentor', {
+      method: "POST",
+      headers: {
+        'dataType' : 'application/json',
+        'Accept' : 'application/json',
+        'Content-Type' : 'application/json',
+        'Access-Control-Allow-Origin' : 'http://localhost:3000'
+      },
+      body: JSON.stringify({
+        mentor_id: mentor
+      })
+    }).then((response) => response.json())
+    .then((response) => {
+    }).catch((error) => {
+      console.log(error);
+    });
     debugger;
   }
-
-
 
   render(){
     let {id,first_name,last_name,location,status,is_mentor} = this.props.data

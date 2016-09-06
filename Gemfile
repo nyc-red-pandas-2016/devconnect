@@ -14,8 +14,11 @@ gem 'uglifier', '>= 1.3.0'
 # gemwinplatform
  gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
-# axios 
+# axios
  gem 'axios_rails'
+
+ # image helper for react
+ gem 'react-rails-img'
 
  gem  'active_model_serializers'
 # Use CoffeeScript for .coffee assets and views

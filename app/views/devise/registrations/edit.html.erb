@@ -62,6 +62,11 @@
     <%= f.email_field :email, autofocus: true %>
   </div>
 
+  <div class="field">
+    <%= f.label :are_you_mentor %><br />
+    <%= f.check_box :is_mentor%>
+  </div>
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
@@ -88,41 +93,50 @@
 <% end %>
 
 
+<!-- <h3>Cancel my account</h3>
+
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+<%= link_to "Back", :back %> -->
+
 <h3>YOUR CURRENT CONTACT INFO </h3>
   <ul class='form' >
     <% current_user.forms_of_contact.to_a.each do |form| %>
-    <%= form_for :contact_info, url: '/users', method: 'DELETE' do |fff| %><li>contact Type:  <%= form.contact_type %><br>
-    Contact Link:  <%= form.contact_link %> </li><br>
+    <%= form_for :contact_info, url: '/users', method: 'DELETE' do |fff| %><li>contact Type:  <%= form.contact_type %> <br>
+    Contact Link:  <%= form.contact_link %>  </li><br>
      <%= fff.hidden_field :id, value: form.id %>
     <%= fff.submit :value => "Delete" %> <br><br>
     <% end %>
     <% end %>
   </ul>
 
-
-
-
-
-
-
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
-
 <h3> ADD MORE CONTACT INFO </h3>
  <%= form_for :contact_info, url: '/users', method: 'PUT' do |ff| %>
+ <h4>Example:</h4> <br>
+ Contact type: (Twitter)<br>
+ Contact link: (https://twitter.com/marcom94)<br><br><br>
    <%= ff.label :contact_type %>
    <%= ff.text_field :contact_type %><br />
    <%= ff.hidden_field :user_id, value: current_user.id %>
    <%= ff.label :contact_link %>
    <%= ff.text_field :contact_link %><br />
 
-   <%= ff.submit "Add form of contact"%>
+   <%= ff.submit "Add form of contact"%><br><br><br>
+   <% end %>
 
-   <h3>SELECT YOUR SKILLS </h3>
+
+<h3> YOUR SKILLS </h3>
+  <ul>
+    <% current_user.skills.each do |skill| %>
+    <%= form_for :skills, url: '/users', method: 'DELETE' do |fff| %><li> <%= skill.name %> </li><br>
+    <%= fff.hidden_field :id, value: skill.id %>
+    <%= fff.submit :value => "Delete" %> <br><br>
+    <% end %>
+    <% end %>
+  </ul>
+
+<% if @skillsnames.length > 0 %>
+   <h3>ADD A NEW SKILL </h3>
     <%= form_for :skills, url: '/users', method: 'PUT' do |ff| %>
    <div class="field">
      <%= ff.hidden_field :user_id, value: current_user.id %>
@@ -133,7 +147,4 @@
   <br>
   <%= ff.submit :value => "Submit Skills" %> <
   <% end %>
-
-
-
- <% end %>
+<% end %>

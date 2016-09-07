@@ -87,6 +87,11 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %><br><br>
   </div>
 
+  <div class="field">
+    <%= f.label :avatar, "Attach an Image" %><br />
+    <%= f.file_field :avatar %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>

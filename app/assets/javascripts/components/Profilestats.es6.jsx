@@ -2,7 +2,6 @@ class Profilestats extends React.Component{
 
   handleSkillClick(event) {
     event.preventDefault();
-    debugger;
     fetch(this.refs.skill.pathname, {
       method: "POST",
       headers: {
@@ -13,14 +12,18 @@ class Profilestats extends React.Component{
       },
       body: JSON.stringify({
         skill_id: event.target.id,
-        user_id: this.props.data.id
+        user_id: this.props.userProfile,
+        current_user: this.props.current_user
       })
     }).then((response) => response.json())
     .then((response) => {
+      debugger;
     }).catch((error) => {
       console.log(error);
     });
   }
+
+    
 
   render(){
     return(

@@ -59,7 +59,7 @@ class Profile extends React.Component{
          </div>
          {/* user stats skills bages */}
          <div className="row">
-              <Profilestats userSkills={this.state.skills}/>
+              <Profilestats userSkills={this.state.skills} current_user={this.props.current_user} userProfile={this.props.user.id}/>
               <Profilebadges />
          </div>
       </div>

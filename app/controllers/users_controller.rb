@@ -17,7 +17,6 @@ class UsersController < ApplicationController
     end
   end
 
-
   def request_mentor
     mentor_id = params[:mentor_id].scan(/\d/)[0].to_i
     @mentor = User.find(mentor_id)
@@ -32,9 +31,18 @@ class UsersController < ApplicationController
   end
 
   def endorsement
-    binding.pry
+    @endorsed = User.find(params[:user_id])
+    @endorser = User.find(params[:current_user])
+    @skill = Skill.find(params[:skill_id]).endorsements.new(endorsed_id: @endorsed.id, endorser_id: @endorser.id)
+
+    if @skill.save
+      render json: {success: "You have successfully endorsed #{@endorsed.first_name}!"}
+    else
+      render json: {errors: "Sorry your endorsement didn't go through. Please try again later."}
+    end
   end
-  
+
+
   private
 
   def find_user

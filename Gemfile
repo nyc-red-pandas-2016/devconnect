@@ -48,6 +48,9 @@ gem 'devise'
 # React Rails
 gem 'react-rails'
 
+# User Figaro for application.yml
+gem "figaro"
+
 gem "font-awesome-rails"
 
 gem 'bootstrap-sass', '~> 3.3.6'

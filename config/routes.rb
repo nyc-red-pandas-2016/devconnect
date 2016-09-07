@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :mentors,only:[:index]
   get '/mentors/search' => "mentors#search"
 
+  post '/users/requestmentor' => "users#request_mentor"
   get 'forums/index' => "forums#index"
   get 'topics/json' => 'topics#json'
   get 'topics/:topic_id/posts/json' => 'posts#json'

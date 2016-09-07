@@ -1,4 +1,29 @@
 class Profileinfo extends React.Component{
+
+  handleRequestMentor(event) {
+    event.preventDefault();
+    var profile_regex = RegExp(/users.*([^/]+)?$/)
+    var mentor = profile_regex.exec(this.refs.profileData.baseURI)[0]
+
+    fetch('/users/requestmentor', {
+      method: "POST",
+      headers: {
+        'dataType' : 'application/json',
+        'Accept' : 'application/json',
+        'Content-Type' : 'application/json',
+        'Access-Control-Allow-Origin' : 'http://localhost:3000'
+      },
+      body: JSON.stringify({
+        mentor_id: mentor,
+        user_id: this.props.data.id
+      })
+    }).then((response) => response.json())
+    .then((response) => {
+    }).catch((error) => {
+      console.log(error);
+    });
+  }
+
   render(){
     let {id,first_name,last_name,location,status,is_mentor} = this.props.data
 
@@ -35,6 +60,8 @@ class Profileinfo extends React.Component{
                   </ul>
 
                   <a href={`/users/edit`} className="btn btn-success"><i className="fa fa-edit m-right-xs"></i>Edit Profile</a>
+                  <a onClick={this.handleRequestMentor.bind(this)} ref='profileData' className="btn btn-success"><i className="fa fa-edit m-right-xs"></i>Request Mentor</a>
+
                   <br />
 
                   {/* <!-- start skills --> */}

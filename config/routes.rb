@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   get 'topics/json' => 'topics#json'
   get 'topics/:topic_id/posts/json' => 'posts#json'
   get '/topics/:topic_id/posts/:post_id/responses/json' => 'responses#json'
+
+  # home index routes
+  get '/home/index/mentors' => 'home#top_mentors'
   get '/home/index/trending' => 'home#top_trending'
   get '/home/index/mostrecent' => 'home#most_recent'
   get '/home/index/forumupdate' => 'home#forum_update'

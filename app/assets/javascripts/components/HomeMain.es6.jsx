@@ -34,8 +34,8 @@ class HomeMain extends React.Component {
     return(
       <div>
         <h4>Welcome to DevConnect!</h4>
-          <HomeForum trending={this.state.topTrending} recent={this.state.mostRecent} news={this.state.news}/>
-          <p>HomeMentor</p>
+       <TopMentors />
+       <HomeForum trending={this.state.topTrending} recent={this.state.mostRecent} news={this.state.news}/>
       </div>
     );
   }

@@ -1,6 +1,6 @@
 class Mentor extends React.Component {
   viewProfile(){}
-  
+
   render(){
     let {id,bio,first_name,last_name,email,location,status,experience} = this.props.data
     var skills = this.props.data.skills

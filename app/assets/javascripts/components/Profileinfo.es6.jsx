@@ -29,6 +29,7 @@ class Profileinfo extends React.Component{
   render(){
     let {id,first_name,last_name,location,status,is_mentor} = this.props.data
     return(
+
                 <div className="col-md-3 col-sm-3 col-xs-12 profile_left">
 
                   <div className="profile_img">
@@ -60,13 +61,17 @@ class Profileinfo extends React.Component{
                     </li>
                   </ul>
 
-                  { this.props.dataOther==this.props.dataCurrent ?
+                  { this.props.dataOther.id==this.props.dataCurrent ?
                   <a href={`/users/edit`} className="btn btn-success"><i className="fa fa-edit m-right-xs"></i>Edit Profile</a>
                     :
                     <p></p>
                   }
 
+                  { this.props.dataOther.is_mentor ?
                   <a onClick={this.handleRequestMentor.bind(this)} ref='profileData' className="btn btn-success"><i className="fa fa-edit m-right-xs"></i>Request Mentor</a>
+                  :
+                  <p></p>
+                }
 
                   {/*Upload avatar*/}
                   {/*<a href='/users/avatar' className="btn btn-success"><i className="fa fa-edit m-right-xs"></i>Upload Profile Photo</a>

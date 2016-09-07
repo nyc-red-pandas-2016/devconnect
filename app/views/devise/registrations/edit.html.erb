@@ -82,43 +82,26 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %><br><br>
   </div>
 
-<!-- <% aux = 0 %>
-<h4> Update contact info </h4>
-  <div class="field">
-    <h4> CONTACT INFO </h4>
-    <%= f.fields_for :forms_of_contact do |a| %>
-      <% if aux != 1 %>
-      <% current_user.forms_of_contact.to_a.each do |form| %>
-          <%= a.hidden_field :user_id, value: current_user.id %>
-           <%= a.label :contact_type %>
-           <%= a.text_field :contact_type, :value => form.contact_type %><br>
-           <%= a.label :contact_link %>
-           <%= a.text_field :contact_link, :value => form.contact_link %><br><br>
-        <% end %>
-        <% aux = 1 %>
-      <% end %>
-    <% end %>
-  </div> -->
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>
+
+
 <h3>YOUR CURRENT CONTACT INFO </h3>
   <ul class='form' >
     <% current_user.forms_of_contact.to_a.each do |form| %>
     <%= form_for :contact_info, url: '/users', method: 'DELETE' do |fff| %><li>contact Type:  <%= form.contact_type %><br>
     Contact Link:  <%= form.contact_link %> </li><br>
      <%= fff.hidden_field :id, value: form.id %>
-    <%= fff.submit :value => "Delete" %>
+    <%= fff.submit :value => "Delete" %> <br><br>
     <% end %>
     <% end %>
   </ul>
 
-  <!-- <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div> -->
 
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
+
+
 
 <h3>Cancel my account</h3>
 

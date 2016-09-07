@@ -1585,17 +1585,20 @@ Cohort.create(name:"Grasshoppers", location: "Washington DC", year: 2017)
 Cohort.create(name:"Grasshoppers", location: "Washington DC", year: 2018)
 
 mentor = [true, false]
+cohort = Cohort.all.sample
+locations = ["New York","Chicago","Washington DC","San Francisco","Austin","
+Seattle"]
+User.create!(email: "guest@test.com", password: 'password', first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, cohort_id: cohort.id, cohort_name: cohort.name, cohort_location: cohort.location, cohort_year: cohort.year, location: locations.sample, status: "Unemployed", goals: Faker::Hacker.say_something_smart, bio: Faker::Hipster.sentences(1),is_mentor: mentor.sample)
 
 5.times do
-  cohort = Cohort.all.sample
-  User.create!(email: Faker::Internet.email, password: 'password', first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, cohort_id: cohort.id, cohort_name: cohort.name, cohort_location: cohort.location, cohort_year: cohort.year, location: "New York", status: "Unemployed", goals: Faker::Hacker.say_something_smart, bio: Faker::Hipster.sentences(1),is_mentor: mentor.sample)
+  User.create!(email: Faker::Internet.email, password: 'password', first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, cohort_id: cohort.id, cohort_name: cohort.name, cohort_location: cohort.location, cohort_year: cohort.year, location: locations.sample, status: "Unemployed", goals: Faker::Hacker.say_something_smart, bio: Faker::Hipster.sentences(1),is_mentor: mentor.sample)
 end
 
 skills = ["Ruby", "Interview prep", "Algorithms", "Java", "Python", "React Native", "Mobile Design", "Front end design", "Javascript", "jQuery"]
 
 
 skills.each do |skill|
-  Skill.create(name: skill)
+  Skill.create(name: skill.downcase)
 end
 
 10.times do

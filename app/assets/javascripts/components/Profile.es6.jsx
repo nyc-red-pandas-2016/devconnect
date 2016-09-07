@@ -19,6 +19,8 @@ class Profile extends React.Component{
 
   }
 
+
+
   render(){
     return(
       <div>
@@ -49,8 +51,8 @@ class Profile extends React.Component{
               </div>
                 <div className="x_content">
                  {/* display the profile stats */}
-                  <Profileinfo data={this.state.users} />
-                  <Profiletabs dataBio={this.state.bio} dataPosts={this.state.posts}/>
+                  <Profileinfo dataCurrent={this.props.current_user} dataOther={this.props.user.id} data={this.state.users}/>
+                  <Profiletabs  dataBio={this.state.bio} dataPosts={this.state.posts}/>
                   </div>
               </div>
           </div>

@@ -35,8 +35,6 @@ class Sidemenu extends React.Component {
                     <ul className="nav child_menu" style={{"display": "none"}}>
                       <li><a href={`/users/${id}/show`}>Profile</a>
                       </li>
-                      <li><a href="">Cohort</a>
-                      </li>
                       <li><a href="/users/edit">Update Information</a>
                       </li>
                       <li><a href="/mentors">Mentors</a>
@@ -54,11 +52,19 @@ class Sidemenu extends React.Component {
                       </li>
                       <li><a>Topics<span className="fa fa-chevron-down"></span></a>
                         <ul className="nav child_menu" style={{"display": "none"}}>
-                          <li className="sub_menu"><a href="/topics">Index</a>
+                          <li className="sub_menu"><a href="/topics">All</a>
                           </li>
-                          <li><a href="#level2_1">Link</a>
+                          <li><a href="/topics/1/posts">Job Opportunities</a>
                           </li>
-                          <li><a href="#level2_2">Link</a>
+                          <li><a href="/topics/2/posts">Font-End Development</a>
+                          </li>
+                          <li><a href="/topics/3/posts">Back-End Development</a>
+                          </li>
+                          <li><a href="/topics/4/posts">Nerd Life</a>
+                          </li>
+                          <li><a href="/topics/5/posts">Data Nerds</a>
+                          </li>
+                          <li><a href="/topics/6/posts">Anything Interesting</a>
                           </li>
                         </ul>
                       </li>

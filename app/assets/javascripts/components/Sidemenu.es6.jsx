@@ -35,9 +35,11 @@ class Sidemenu extends React.Component {
                     <ul className="nav child_menu" style={{"display": "none"}}>
                       <li><a href={`/users/${id}/show`}>Profile</a>
                       </li>
-                      <li><a href="index2.html">Cohort</a>
+                      <li><a href="">Cohort</a>
                       </li>
-                      <li><a href="index3.html">Update Information</a>
+                      <li><a href="/users/edit">Update Information</a>
+                      </li>
+                      <li><a href="/mentors">Mentors</a>
                       </li>
                     </ul>
                   </li>

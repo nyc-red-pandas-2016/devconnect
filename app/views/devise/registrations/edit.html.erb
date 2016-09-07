@@ -103,6 +103,9 @@
 
 
 
+
+
+
 <h3>Cancel my account</h3>
 
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
@@ -118,5 +121,19 @@
    <%= ff.text_field :contact_link %><br />
 
    <%= ff.submit "Add form of contact"%>
+
+   <h3>SELECT YOUR SKILLS </h3>
+    <%= form_for :skills, url: '/users', method: 'PUT' do |ff| %>
+   <div class="field">
+     <%= ff.hidden_field :user_id, value: current_user.id %>
+     <%= ff.label :name %><br/>
+     <%= ff.select :name, @skillsnames %>
+   </div>
+  <br>
+  <br>
+  <%= ff.submit :value => "Submit Skills" %> <
+  <% end %>
+
+
 
  <% end %>

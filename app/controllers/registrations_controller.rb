@@ -37,29 +37,43 @@ class RegistrationsController < Devise::RegistrationsController
     end
 
   def update
-    if contact_info_params
-        current_user.forms_of_contact << ContactInfo.new(contact_info_params)
+    if skills_info_params
+      current_user.skills << Skill.new(skills_info_params)
+      if current_user.save
+        redirect_to '/users/edit'
+      else
+        flash[:error] = current_user.errors.full_messages
+        redirect_to '/users/edit'
+      end
+    else
+      if contact_info_params
+          current_user.forms_of_contact << ContactInfo.new(contact_info_params)
+          if current_user.save
+            redirect_to '/users/edit'
+          else
+            flash[:error] = current_user.errors.full_messages
+            redirect_to '/users/edit'
+          end
+      else
+
+        update_resource(current_user, account_update_params)
+        # binding.pry
         if current_user.save
-          redirect_to '/users/edit'
+          redirect_to '/home/index'
         else
           flash[:error] = current_user.errors.full_messages
           redirect_to '/users/edit'
         end
-    else
-
-      update_resource(current_user, account_update_params)
-      # binding.pry
-      if current_user.save
-        redirect_to '/home/index'
-      else
-        flash[:error] = current_user.errors.full_messages
-        redirect_to '/users/edit'
       end
     end
   end
 
     def edit
       @contact_info = ContactInfo.new
+      @skillsnames = []
+      Skill.all.each do |skill|
+        @skillsnames << skill.name
+      end
       # params.require(:contact_info).permit(:contact_type, :contact_link, :user_id)
 
     end
@@ -94,6 +108,12 @@ class RegistrationsController < Devise::RegistrationsController
   def contact_info_params
       if params[:contact_info]
         params.require(:contact_info).permit(:contact_type, :contact_link, :user_id)
+      end
+  end
+
+  def skills_info_params
+      if params[:skills]
+        params.require(:skills).permit(:name, :user_id)
       end
   end
 

@@ -1,5 +1,6 @@
 class Profilestats extends React.Component{
 
+
   handleSkillClick(event) {
     event.preventDefault();
     fetch(this.refs.skill.pathname, {
@@ -15,15 +16,14 @@ class Profilestats extends React.Component{
         user_id: this.props.userProfile,
         current_user: this.props.current_user
       })
-    }).then((response) => response.json())
-    .then((response) => {
-      debugger;
+    }).then((response) => {
+      this.props.updateUserSkills(response);
     }).catch((error) => {
       console.log(error);
     });
   }
 
-    
+
 
   render(){
     return(

@@ -36,9 +36,10 @@ class UsersController < ApplicationController
     @skill = Skill.find(params[:skill_id]).endorsements.new(endorsed_id: @endorsed.id, endorser_id: @endorser.id)
 
     if @skill.save
-      render json: {success: "You have successfully endorsed #{@endorsed.first_name}!"}
+      flash[:notice] = "You have successfully endorsed #{@endorsed.first_name.capitalize}!"
+      redirect_to "/users/#{@endorsed.id}/show"
     else
-      render json: {errors: "Sorry your endorsement didn't go through. Please try again later."}
+      flash[:error] = "Sorry your endorsement didn't go through. Please try again later."
     end
   end
 

@@ -1,5 +1,9 @@
 class Profilestats extends React.Component{
 
+  handleSkillClick(event) {
+    event.preventDefault();
+    debugger;
+  }
 
   render(){
     return(
@@ -22,7 +26,7 @@ class Profilestats extends React.Component{
 
                       {
                         this.props.userSkills.map((skill, i) => {
-                          return (<a href="#" className="btn btn-success"><i className="fa m-right-xs"></i>{skill}{i}</a>)
+                          return (<a ref='skill' onClick={this.handleSkillClick.bind(this)} key={i} href="/users/endorsement" className="btn btn-success"><i className="fa m-right-xs"></i>{skill.name}</a>)
                         })
                       }
 

@@ -1,5 +1,10 @@
 class MentorsController < ApplicationController
   def index
+
+      if !current_user
+        redirect_to '/'
+        return
+      end
     @mentors = User.where(is_mentor:true)
     @locations = Cohort.all.map{|cohort| cohort.location}
 

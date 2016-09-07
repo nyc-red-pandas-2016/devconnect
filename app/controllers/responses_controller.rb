@@ -1,5 +1,9 @@
 class ResponsesController < ApplicationController
   def index
+    if !current_user
+      redirect_to '/'
+      return
+    end
     @topic = Topic.find(params[:topic_id]).to_json
     @post = Post.find(params[:post_id]).to_json
   end

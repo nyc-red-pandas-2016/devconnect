@@ -27,7 +27,7 @@ class RegistrationsController < Devise::RegistrationsController
       return
     end
       if user.save
-        redirect_to '/home/index'
+        redirect_to '/'
       else
         flash[:error] = user.errors.full_messages
         redirect_to '/users/sign_up'

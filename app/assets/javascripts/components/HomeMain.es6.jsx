@@ -10,7 +10,7 @@ class HomeMain extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://devconnect-admin.herokuapp.com/news')
+    fetch('https://devconnect-admin.herokuapp.com/news')
     .then((response) => {
       return response.json()
     }).then((response) => {

@@ -1,6 +1,7 @@
 class Mentor extends React.Component {
+  viewProfile(){}
+  
   render(){
-
     let {id,bio,first_name,last_name,email,location,status,experience} = this.props.data
     var skills = this.props.data.skills
 
@@ -32,7 +33,7 @@ class Mentor extends React.Component {
               </div>
           </div>
             <div className="col-xs-12 bottom text-center">
-                <a className="btn btn-success btn-xs" href={`users/${id}/show`}>Visit Profile</a>
+                <a className="btn btn-success btn-xs" onClick={this.viewProfile.bind(this)} href={`users/${id}/show`}>Visit Profile</a>
             </div>
             {/* end of profile_view */}
           </div>

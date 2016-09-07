@@ -35,7 +35,6 @@ class RegistrationsController < Devise::RegistrationsController
     end
 
   def update
-<<<<<<< e00cb963446ea14682d18c1a9815736d3951ae24
     if skills_info_params
 
       skill = Skill.find_by(name: skills_info_params[:name])
@@ -78,7 +77,7 @@ class RegistrationsController < Devise::RegistrationsController
 
 #     current_user.update(avatar: params[:user][:avatar])
 #     redirect_to "/users/#{current_user.id}/show"
-# >>>>>>> fixed paperclip. thank you iuliia.
+
   end
 
     def edit

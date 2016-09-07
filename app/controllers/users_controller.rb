@@ -1,11 +1,19 @@
 class UsersController < ApplicationController
+  include UsersHelper
+
   def json
     @user = current_user
     render json: @user
   end
 
   def show
-    @user = current_user.to_json
+    if find_user
+      @user = find_user
+      render_component(@user)
+    else
+      @user = User.current_user
+      render_component(@user)
+    end
   end
 
 
@@ -15,6 +23,11 @@ class UsersController < ApplicationController
     # binding.pry
     @user = User.find(params[:user_id])
     RequestMentorMailer.sample_email(@user, @mentor).deliver
+  end
+
+  private
+  def find_user
+    User.find(params[:id])
   end
 
 end

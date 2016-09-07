@@ -7,6 +7,10 @@ class UsersController < ApplicationController
   end
 
   def show
+    if !current_user
+      redirect_to '/'
+      return
+    end
     if find_user
       @user = find_user
       render_component(@user)

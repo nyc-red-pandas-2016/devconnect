@@ -6,6 +6,10 @@ class TopicsController < ApplicationController
   end
 
   def index
+    if !current_user
+      redirect_to '/'
+      return
+    end
   end
 
 end

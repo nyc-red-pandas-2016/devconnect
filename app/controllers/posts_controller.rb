@@ -1,6 +1,10 @@
 class PostsController < ApplicationController
 
   def index
+    if !current_user
+      redirect_to '/'
+      return
+    end
     @topic = Topic.find(params[:topic_id]).to_json
   end
 
@@ -32,6 +36,7 @@ class PostsController < ApplicationController
   end
 
   def show
+  
   end
 
   private

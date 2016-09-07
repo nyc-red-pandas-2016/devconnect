@@ -14,14 +14,14 @@ class Profileinfo extends React.Component{
         'Access-Control-Allow-Origin' : 'http://localhost:3000'
       },
       body: JSON.stringify({
-        mentor_id: mentor
+        mentor_id: mentor,
+        user_id: this.props.data.id
       })
     }).then((response) => response.json())
     .then((response) => {
     }).catch((error) => {
       console.log(error);
     });
-    debugger;
   }
 
   render(){

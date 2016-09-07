@@ -439,8 +439,14 @@
                                                       <!-- content2 -->
                                                       <tr>
                                                          <td style="font-family: Helvetica, arial, sans-serif; font-size: 14px; color: #889098; text-align:center; line-height: 24px;" st-content="3col-content2">
-                                                            Two lines of Locvrem Ipsum
-                                                            will just fit in here.
+                                                            <%=  @user.first_name %> <%= @user.last_name %>:
+                                                            <%= @user.email %>
+                                                            <% @user.forms_of_contact.each do |contact| %>
+                                                              <ul>
+                                                                <li><%= contact.contact_type %></li>
+                                                                <li><%= contact.contact_link %></li>
+                                                              </ul>
+                                                              <% end %>
                                                          </td>
                                                       </tr>
                                                       <!-- end of content2 -->

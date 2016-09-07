@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  include UsersHelper
 
   def json
     @user = current_user
@@ -13,10 +12,8 @@ class UsersController < ApplicationController
     end
     if find_user
       @user = find_user
-      render_component(@user)
     else
       @user = User.current_user
-      render_component(@user)
     end
   end
 

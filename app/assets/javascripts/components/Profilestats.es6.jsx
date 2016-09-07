@@ -3,6 +3,23 @@ class Profilestats extends React.Component{
   handleSkillClick(event) {
     event.preventDefault();
     debugger;
+    fetch(this.refs.skill.pathname, {
+      method: "POST",
+      headers: {
+        'dataType' : 'application/json',
+        'Accept' : 'application/json',
+        'Content-Type' : 'application/json',
+        'Access-Control-Allow-Origin' : 'http://localhost:3000'
+      },
+      body: JSON.stringify({
+        skill_id: event.target.id,
+        user_id: this.props.data.id
+      })
+    }).then((response) => response.json())
+    .then((response) => {
+    }).catch((error) => {
+      console.log(error);
+    });
   }
 
   render(){
@@ -26,7 +43,7 @@ class Profilestats extends React.Component{
 
                       {
                         this.props.userSkills.map((skill, i) => {
-                          return (<a ref='skill' onClick={this.handleSkillClick.bind(this)} key={i} href="/users/endorsement" className="btn btn-success"><i className="fa m-right-xs"></i>{skill.name}</a>)
+                          return (<a ref='skill' id={skill.id} onClick={this.handleSkillClick.bind(this)} key={i} href="/users/endorsement" className="btn btn-success"><i className="fa m-right-xs"></i>{skill.name}</a>)
                         })
                       }
 

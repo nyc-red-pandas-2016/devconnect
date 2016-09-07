@@ -30,8 +30,13 @@ class UsersController < ApplicationController
     @user = current_user
     render '/users/testpaperclip'
   end
+
+  def endorsement
+    binding.pry
+  end
   
   private
+
   def find_user
     User.find(params[:id])
   end

@@ -22,7 +22,6 @@ class Profile extends React.Component{
 
 
   render(){
-
     return(
       <div>
           {/* this will display the page title */}

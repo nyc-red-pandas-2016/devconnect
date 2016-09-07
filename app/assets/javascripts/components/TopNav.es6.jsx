@@ -1,6 +1,6 @@
 class Topnav extends React.Component {
 
-  
+
 
   render() {
     let {id,first_name,last_name}=this.props.current_user
@@ -23,21 +23,21 @@ class Topnav extends React.Component {
           <ul className="dropdown-menu dropdown-usermenu pull-right">
             <li><a href={`/users/${id}/show`}> Profile</a>
             </li>
-            <li>
+            {/*<li>
               <a href="javascript:;">
                 <span className="badge bg-red pull-right">50%</span>
                 <span>Settings</span>
               </a>
-            </li>
-            <li>
+            </li>*/}
+            {/*<li>
               <a href="javascript:;">Help</a>
-            </li>
+            </li>*/}
             <li><a href={'/users/sign_out'}><i className="fa fa-sign-out pull-right"></i> Log Out</a>
             </li>
           </ul>
         </li>
 
-        <li role="presentation" className="dropdown">
+        {/*<li role="presentation" className="dropdown">
           <a href="javascript:;" className="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
             <i className="fa fa-envelope-o"></i>
             <span className="badge bg-green">6</span>
@@ -108,7 +108,7 @@ class Topnav extends React.Component {
               </div>
             </li>
           </ul>
-        </li>
+        </li>*/}
 
       </ul>
     </nav>

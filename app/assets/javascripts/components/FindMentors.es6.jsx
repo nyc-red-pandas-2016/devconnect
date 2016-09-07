@@ -33,30 +33,36 @@ class FindMentors extends React.Component {
   render(){
     return(
       <div className="find-mentors">
-        <form id='mentorForm'>
-        <div className="input-group form-input-group">
-          <input ref="skills" className="form-control from-input-field" placeholder="skills separare with comma ex( ruby,html,javascript )"/>
-            <div className="input-group-btn">
-            <select  ref='locations' id="mentor-dropdown" className="form-control" placeholder="location">
-              {this.state.locations.map((location,index)=>{
-                return(
-                  <option key={index}>{location}</option>
-                )
-              })
-            }
-            </select>
-
-            <button  type="button" className="btn btn-primary" onClick={this.searchMentor.bind(this)}>Search</button>
-            </div>
-          </div>
-        </form>
+       <div id='search-mentor' className="col-md-12 col-sm-12 col-xs-12 text-center">
         {/* metor list */}
-        <div className="row">
+            <div className="row">
+              <form id='mentorForm'>
+                <div className="input-group form-input-group">
+                  <input ref="skills" className="form-control from-input-field" placeholder="skills separare with comma ex( ruby,html,javascript )"/>
+                  <div className="input-group-btn">
+
+                    <select  ref='locations' id="mentor-dropdown" className="form-control" placeholder="location">
+                    {this.state.locations.map((location,index)=>{
+                      return(
+                        <option key={index}>{location}</option>
+                            )
+                          })
+                        }
+                     </select>
+
+                  <button  type="button" className="btn btn-primary" onClick={this.searchMentor.bind(this)}>Search</button>
+                    </div>
+                    </div>
+                </form>
+
+          <div className="clearfix"></div>
+
         {this.state.mentors.map((mentor,index)=>{
           return(
             <Mentor  data={mentor} key={index}/>
           )
         })}
+        </div>
         </div>
       </div>
 

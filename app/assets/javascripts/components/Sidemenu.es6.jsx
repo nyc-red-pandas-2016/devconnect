@@ -1,6 +1,7 @@
 class Sidemenu extends React.Component {
   render() {
-    let {id,first_name,last_name}=this.props.current_user
+    let {id,first_name,last_name, avatar}=this.props.current_user
+
     return (
         <div className="col-md-3 left_col">
           <div className="left_col scroll-view">

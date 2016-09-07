@@ -19,6 +19,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.text :goals
       t.text :experience
       t.text :bio
+      
 
 
       ## Recoverable

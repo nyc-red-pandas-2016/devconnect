@@ -36,8 +36,8 @@ class Profileinfo extends React.Component{
                     {/* <!-- end of image cropping --> */}
                     <div id="crop-avatar">
                       {/* <!-- Current avatar --> */}
-                      <img className="img-responsive avatar-view" src="https://s-media-cache-ak0.pinimg.com/236x/40/00/d7/4000d7ed061f540a0180b6181184686d.jpg" alt="Avatar" title="Change the avatar"/>
-
+                      {/*<img className="img-responsive avatar-view" src= alt="Avatar" title="Change the avatar"/>*/}
+                      <img className="img-responsive avatar-view" src={this.props.avatar ? this.props.avatar : "https://s3-us-west-2.amazonaws.com/dbcfinalproject/profilePic.png"} alt="Avatar" title="Change the avatar"/>
                       {/* <!-- Loading state --> */}
                       <div className="loading" aria-label="Loading" role="img" tabIndex="-1"></div>
                     </div>
@@ -68,7 +68,10 @@ class Profileinfo extends React.Component{
 
                   <a onClick={this.handleRequestMentor.bind(this)} ref='profileData' className="btn btn-success"><i className="fa fa-edit m-right-xs"></i>Request Mentor</a>
 
-                  <br />
+                  {/*Upload avatar*/}
+                  {/*<a href='/users/avatar' className="btn btn-success"><i className="fa fa-edit m-right-xs"></i>Upload Profile Photo</a>
+                  <br />*/}
+
 
                   {/* <!-- start skills --> */}
 

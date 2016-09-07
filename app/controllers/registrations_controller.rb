@@ -74,6 +74,10 @@ class RegistrationsController < Devise::RegistrationsController
 
       end
     end
+
+#     current_user.update(avatar: params[:user][:avatar])
+#     redirect_to "/users/#{current_user.id}/show"
+
   end
 
     def edit
@@ -111,7 +115,7 @@ class RegistrationsController < Devise::RegistrationsController
 
 
   def sign_up_params
-    params.require(:user).permit(:first_name, :last_name, :cohort_name, :cohort_year, :cohort_location, :email, :is_mentor, :location, :password, :password_confirmation)
+    params.require(:user).permit(:first_name, :last_name, :cohort_name, :cohort_year, :cohort_location, :email, :is_mentor, :location, :password, :password_confirmation, :avatar)
   end
 
 
@@ -128,7 +132,7 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def account_update_params
-    params.require(:user).permit(:id, :location, :status, :place_of_work, :position, :goals, :experience, :bio, :email, :is_mentor, :password, :password_confirmation, :current_password, forms_of_contact_attributes: [:contact_type, :contact_link,:user_id, :id])
+    params.require(:user).permit(:id, :location, :status, :place_of_work, :position, :goals, :experience, :bio, :email, :is_mentor, :password, :password_confirmation, :current_password, :avatar, forms_of_contact_attributes: [:contact_type, :contact_link,:user_id, :id])
   end
 
   def contact_delete_params

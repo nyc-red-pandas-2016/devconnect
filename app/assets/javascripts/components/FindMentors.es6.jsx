@@ -23,9 +23,9 @@ class FindMentors extends React.Component {
       method:"get",
       url:"/mentors/search",
       data: {mentor: {skills: skills, location: location}}
-    }).done((mentors)=>{
-      this.setState({
-        mentors: mentors
+    }).done((response)=>{
+       this.setState({
+        mentors: response
       })
     })
   }

@@ -7,15 +7,21 @@ class MentorsController < ApplicationController
   end
 
   def search
-    @mentors = User.where("is_mentor = ? AND location = ? ", true ,mentor_params[:location])
+    @mentors = Array.new
+    # @mentors << User.where("is_mentor = ? AND location = ? ", true ,mentor_params[:location])
     @search_skills = mentor_params[:skills].split(",")
-    @foundMentor = []
-    @foundMentor = @mentors.each do |mentor|
-      binding.pry
-      return mentor if mentor.skills.ransack(name_in:@search_skills)
+    @skilledMentor = @search_skills.map do |skill|
+       Skill.where(["name LIKE ?","%#{skill.strip.downcase}%"])
     end
-    @mentorSkills = Skill.ransack(name_in: @search_skills)
-    @mentor = Mentor.ransack(mentor_params["skills"])
+    @skilledMentor.flatten.map do |skill|
+      skill.endorsed.each do |endorsed|
+        if endorsed.location == mentor_params[:location]
+           @mentors << User.where("is_mentor = ? AND location = ? ", true ,mentor_params[:location])
+           @mentors << endorsed
+        end
+      end
+    end
+    render json:@mentors.flatten.uniq
   end
 
   private

@@ -14,7 +14,7 @@ gem 'uglifier', '>= 1.3.0'
 # gemwinplatform
  gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
-# axios 
+# axios
  gem 'axios_rails'
 
  gem  'active_model_serializers'
@@ -44,6 +44,9 @@ gem 'devise'
 
 # React Rails
 gem 'react-rails'
+
+# User Figaro for application.yml
+gem "figaro"
 
 gem "font-awesome-rails"
 

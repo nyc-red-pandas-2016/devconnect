@@ -77,22 +77,39 @@
 
 
 
-
-
   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.password_field :password_confirmation, autocomplete: "off" %><br><br>
   </div>
 
+<!-- <% aux = 0 %>
+<h4> Update contact info </h4>
   <div class="field">
-    <%= f.fields_for :contact_info do |a| %>
-    <%= a.hidden_field :user_id, value: current_user.id
-       <%= a.label :contact_type %>
-       <%= a.text_field :contact_type %>
-       <%= a.label :contact_link %>
-       <%= a.text_field :contact_link %>
+    <h4> CONTACT INFO </h4>
+    <%= f.fields_for :forms_of_contact do |a| %>
+      <% if aux != 1 %>
+      <% current_user.forms_of_contact.to_a.each do |form| %>
+          <%= a.hidden_field :user_id, value: current_user.id %>
+           <%= a.label :contact_type %>
+           <%= a.text_field :contact_type, :value => form.contact_type %><br>
+           <%= a.label :contact_link %>
+           <%= a.text_field :contact_link, :value => form.contact_link %><br><br>
+        <% end %>
+        <% aux = 1 %>
       <% end %>
-    </div>
+    <% end %>
+  </div> -->
+<h3>YOUR CURRENT CONTACT INFO </h3>
+  <ul class='form' >
+    <% current_user.forms_of_contact.to_a.each do |form| %>
+    <%= form_for :contact_info, url: '/users', method: 'DELETE' do |fff| %><li>contact Type:  <%= form.contact_type %><br>
+    Contact Link:  <%= form.contact_link %> </li><br>
+     <%= fff.hidden_field :id, value: form.id %>
+    <%= fff.submit :value => "Delete" %>
+    <% end %>
+    <% end %>
+  </ul>
+
   <!-- <div class="field">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
@@ -108,3 +125,15 @@
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
+
+<h3> ADD MORE CONTACT INFO </h3>
+ <%= form_for :contact_info, url: '/users', method: 'PUT' do |ff| %>
+   <%= ff.label :contact_type %>
+   <%= ff.text_field :contact_type %><br />
+   <%= ff.hidden_field :user_id, value: current_user.id %>
+   <%= ff.label :contact_link %>
+   <%= ff.text_field :contact_link %><br />
+
+   <%= ff.submit "Add form of contact"%>
+
+ <% end %>

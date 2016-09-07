@@ -52,6 +52,9 @@ gem "font-awesome-rails"
 
 gem 'bootstrap-sass', '~> 3.3.6'
 
+# searh
+gem 'ransack'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

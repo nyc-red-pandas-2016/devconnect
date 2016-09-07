@@ -18,5 +18,6 @@
 //= require bootstrap
 //= require custom.js
 //= require axios
+//= require react_rails_img
 
 //= require_tree .

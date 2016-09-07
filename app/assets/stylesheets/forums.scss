@@ -1,3 +1,13 @@
 // Place all the styles related to the forums controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.input-group.form-input-group {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+
+.input-group-btn {
+    width: 20%;
+}

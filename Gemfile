@@ -17,6 +17,9 @@ gem 'uglifier', '>= 1.3.0'
 # axios
  gem 'axios_rails'
 
+ # image helper for react
+ gem 'react-rails-img'
+
  gem  'active_model_serializers'
 # Use CoffeeScript for .coffee assets and views
 # gem 'coffee-rails', '~> 4.2'
@@ -51,6 +54,9 @@ gem "figaro"
 gem "font-awesome-rails"
 
 gem 'bootstrap-sass', '~> 3.3.6'
+
+# searh
+gem 'ransack'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

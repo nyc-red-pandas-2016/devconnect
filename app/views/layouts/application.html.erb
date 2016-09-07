@@ -14,8 +14,10 @@
   <body class="<%= user_signed_in? ? "nav-md" : "login" %>">
     <div class="container body">
       <div class="main_container">
+        <% if current_user %>
         <%= render 'shared/sidebar'  %>
         <%= render 'shared/topnav' %>
+        <% end %>
         <div class="right_col" role="main">
           <%= yield %>
         </div>

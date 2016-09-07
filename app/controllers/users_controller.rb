@@ -1,11 +1,20 @@
 class UsersController < ApplicationController
+
   def json
     @user = current_user
     render json: @user
   end
 
   def show
-    @user = current_user.to_json
+    if !current_user
+      redirect_to '/'
+      return
+    end
+    if find_user
+      @user = find_user
+    else
+      @user = User.current_user
+    end
   end
 
 
@@ -15,6 +24,11 @@ class UsersController < ApplicationController
     # binding.pry
     @user = User.find(params[:user_id])
     RequestMentorMailer.sample_email(@user, @mentor).deliver
+  end
+
+  private
+  def find_user
+    User.find(params[:id])
   end
 
 end

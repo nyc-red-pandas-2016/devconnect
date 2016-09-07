@@ -26,7 +26,7 @@ class HomeForum extends React.Component {
             </div>
             <div role="tabpanel" className="tab-pane fade" id="tab_content3" aria-labelledby="profile-tab">
 
-              <HomeForumNews />
+              <HomeForumNewsList news={this.props.news}/>
 
             </div>
           </div>

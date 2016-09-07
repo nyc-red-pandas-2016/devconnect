@@ -9,17 +9,14 @@ class Profile extends React.Component{
       }
   }
   componentDidMount(){
-    axios('/users/data/json').then((response)=>{
-      let user = response.data
-      this.setState({
-        users:user,
-        bio:user.bio,
-        posts:user.posts,
-        skills:user.skills
-      })
-    }).catch((errors)=>{
-      console.log(errors)
+
+    this.setState({
+      users:this.props.user,
+      bio:this.props.user.bio,
+      posts:this.props.posts,
+      skills:this.props.skills
     })
+
   }
 
   render(){

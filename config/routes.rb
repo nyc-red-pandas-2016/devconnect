@@ -3,6 +3,11 @@ Rails.application.routes.draw do
   # user routes
   get 'users/:id/show' => "users#show"
   get '/users/data/json' => "users#json"
+
+  #FindMentors
+  resources :mentors,only:[:index]
+  get '/mentors/search' => "mentors#search"
+
   get 'forums/index' => "forums#index"
   get 'topics/json' => 'topics#json'
   get 'topics/:topic_id/posts/json' => 'posts#json'

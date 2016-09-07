@@ -47,7 +47,7 @@ class RegistrationsController < Devise::RegistrationsController
       end
 
     else
-
+      
       if contact_info_params
 
           current_user.forms_of_contact << ContactInfo.new(contact_info_params)

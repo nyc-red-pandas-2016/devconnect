@@ -11,5 +11,7 @@ class User < ApplicationRecord
   has_many :posts
   has_many :forms_of_contact, class_name: "ContactInfo"
 
+  accepts_nested_attributes_for :forms_of_contact, :allow_destroy => true
+
   validates :first_name, :last_name, :cohort_name, :cohort_location, :cohort_year, presence: true
 end

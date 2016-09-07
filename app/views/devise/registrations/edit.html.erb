@@ -1,11 +1,70 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
+<ul>
+  <% if flash[:error] %>
+    <% flash[:error].each do |error| %>
+    <li><%= error %></li>
+    <% end %>
+  <% end %>
+</ul>
+
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
+
+  <!-- <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.email_field :first_name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.email_field :last_name, autofocus: true %>
+  </div> -->
+
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.text_field :location, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :professional_status %><br />
+    <%= f.text_field :status, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :place_of_work %><br />
+    <%= f.text_field :place_of_work, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :position %><br />
+    <%= f.text_field :position, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :goals %><br />
+    <%= f.text_area :goals, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :experience %><br />
+    <%= f.text_field :experience, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :bio %><br />
+    <%= f.text_area :bio, autofocus: true %>
+  </div>
+
 
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :are_you_mentor %><br />
+    <%= f.check_box :is_mentor%>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -21,14 +80,11 @@
     <% end %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+
 
   <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %><br><br>
   </div>
 
   <div class="actions">
@@ -36,8 +92,59 @@
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
+
+<!-- <h3>Cancel my account</h3>
 
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<%= link_to "Back", :back %>
+<%= link_to "Back", :back %> -->
+
+<h3>YOUR CURRENT CONTACT INFO </h3>
+  <ul class='form' >
+    <% current_user.forms_of_contact.to_a.each do |form| %>
+    <%= form_for :contact_info, url: '/users', method: 'DELETE' do |fff| %><li>contact Type:  <%= form.contact_type %> <br>
+    Contact Link:  <%= form.contact_link %>  </li><br>
+     <%= fff.hidden_field :id, value: form.id %>
+    <%= fff.submit :value => "Delete" %> <br><br>
+    <% end %>
+    <% end %>
+  </ul>
+
+<h3> ADD MORE CONTACT INFO </h3>
+ <%= form_for :contact_info, url: '/users', method: 'PUT' do |ff| %>
+ <h4>Example:</h4> <br>
+ Contact type: (Twitter)<br>
+ Contact link: (https://twitter.com/marcom94)<br><br><br>
+   <%= ff.label :contact_type %>
+   <%= ff.text_field :contact_type %><br />
+   <%= ff.hidden_field :user_id, value: current_user.id %>
+   <%= ff.label :contact_link %>
+   <%= ff.text_field :contact_link %><br />
+
+   <%= ff.submit "Add form of contact"%><br><br><br>
+   <% end %>
+
+
+<h3> YOUR SKILLS </h3>
+  <ul>
+    <% current_user.skills.each do |skill| %>
+    <%= form_for :skills, url: '/users', method: 'DELETE' do |fff| %><li> <%= skill.name %> </li><br>
+    <%= fff.hidden_field :id, value: skill.id %>
+    <%= fff.submit :value => "Delete" %> <br><br>
+    <% end %>
+    <% end %>
+  </ul>
+
+<% if @skillsnames.length > 0 %>
+   <h3>ADD A NEW SKILL </h3>
+    <%= form_for :skills, url: '/users', method: 'PUT' do |ff| %>
+   <div class="field">
+     <%= ff.hidden_field :user_id, value: current_user.id %>
+     <%= ff.label :name %><br/>
+     <%= ff.select :name, @skillsnames %>
+   </div>
+  <br>
+  <br>
+  <%= ff.submit :value => "Submit Skills" %> <
+  <% end %>
+<% end %>

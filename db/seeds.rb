@@ -1624,8 +1624,11 @@ end
 end
 
 contact_type = ["LinkedIn", "Twitter", "Facebook", "Github", "Slack"]
-10.times do
-  contact_type.each do |type|
-    ContactInfo.create(contact_type: type, contact_link: Faker::Internet.email, user_id: User.all.sample.id)
-  end
+5.times do |n|
+  ContactInfo.create(contact_type: contact_type.sample, contact_link: Faker::Internet.email, user_id: User.find(n+1).id)
 end
+# 10.times do
+#   contact_type.each do |type|
+#     ContactInfo.create(contact_type: type, contact_link: Faker::Internet.email, user_id: User.all.sample.id)
+#   end
+# end

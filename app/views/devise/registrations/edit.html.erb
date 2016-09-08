@@ -132,7 +132,7 @@
 
 <h3> YOUR SKILLS </h3>
   <ul>
-    <% current_user.skills.each do |skill| %>
+    <% current_user.skills.uniq.each do |skill| %>
     <%= form_for :skills, url: '/users', method: 'DELETE' do |fff| %><li> <%= skill.name %> </li><br>
     <%= fff.hidden_field :id, value: skill.id %>
     <%= fff.submit :value => "Delete" %> <br><br>

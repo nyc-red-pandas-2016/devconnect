@@ -16,7 +16,9 @@ class Profilestats extends React.Component{
         user_id: this.props.userProfile,
         current_user: this.props.current_user
       })
-    }).then((response) => {
+    }).then((response) => response.json())
+    .then((response) => {
+      debugger;
       this.props.updateUserSkills(response);
     }).catch((error) => {
       console.log(error);

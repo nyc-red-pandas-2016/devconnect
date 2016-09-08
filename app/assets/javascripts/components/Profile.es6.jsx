@@ -83,7 +83,7 @@ class Profile extends React.Component{
               </div>
                 <div className="x_content">
                  {/* display the profile stats */}
-                  <Profileinfo dataCurrent={this.props.current_user} dataOther={this.props.user} data={this.state.users} avatar={this.props.avatar}/>
+                  <Profileinfo contactInfo={this.props.contact_info} dataCurrent={this.props.current_user} dataOther={this.props.user} data={this.state.users} avatar={this.props.avatar}/>
                   <Profiletabs  dataBio={this.state.bio} dataPosts={this.state.posts}/>
                   </div>
               </div>

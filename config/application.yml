@@ -12,3 +12,8 @@
 
 gmail_username: 'noreply.devconnect@gmail.com'
 gmail_password: 'redpandas2016'
+
+
+# AWS keys
+access_key_id: 'AKIAJRDXIC222OO2MPVA',
+secret_access_key: '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'

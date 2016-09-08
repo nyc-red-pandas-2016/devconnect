@@ -18,8 +18,8 @@ Rails.application.configure do
     storage: :s3,
     s3_credentials: {
       bucket: 'dbcfinalproject',
-      access_key_id: 'AKIAIYO4DDDIONK6BHKQ',
-      secret_access_key: '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',
+      access_key_id: ENV['access_key_id'],
+      secret_access_key: ENV['secret_access_key'],
       s3_region: 'us-west-2',
       s3_host_name: 's3-us-west-2.amazonaws.com',
       s3_protocol: 'https'

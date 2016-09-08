@@ -23,7 +23,8 @@ skip_before_filter  :verify_authenticity_token
     @mentor = User.find(mentor_id)
     # binding.pry
     @user = User.find(params[:user_id])
-    RequestMentorMailer.sample_email(@user, @mentor).deliver
+    RequestMentorMailer.mentor_email(@user, @mentor).deliver
+    RequestMentorMailer.user_email(@user, @mentor).deliver
   end
 
   def avatar

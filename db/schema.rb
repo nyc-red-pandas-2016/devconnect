@@ -82,9 +82,6 @@ ActiveRecord::Schema.define(version: 20160906005308) do
     t.string   "encrypted_password",     default: "",    null: false
     t.string   "first_name",                             null: false
     t.string   "last_name",                              null: false
-    t.string   "cohort_name",                            null: false
-    t.string   "cohort_location",                        null: false
-    t.integer  "cohort_year",                            null: false
     t.integer  "cohort_id",                              null: false
     t.string   "cohort_name",                            null: false
     t.string   "cohort_location",                        null: false

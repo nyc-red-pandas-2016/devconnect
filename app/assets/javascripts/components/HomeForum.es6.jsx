@@ -2,7 +2,8 @@ class HomeForum extends React.Component {
 
   render () {
     return(
-      <div>
+      <div className="row">
+       <h2></h2>
         <div className="col-md-9 col-sm-9 col-xs-12">
         <div className="" role="tabpanel" data-example-id="togglable-tabs">
           <ul id="myTab" className="nav nav-tabs bar_tabs" role="tablist">

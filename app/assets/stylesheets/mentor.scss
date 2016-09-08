@@ -1,3 +1,20 @@
 #mentorForm {
     padding: 15px 0px;
 }
+
+.mentor-card-image {
+  width: 100%;
+  max-width: 100px;
+  height: 100px;
+  border-radius: 200px;
+  box-shadow: 0px 0px 5px #d0d0d0;
+  border: 1px solid #ccc;
+}
+
+.mentor-name {
+    display: block;
+}
+
+.mentor-card {
+    text-align: center;
+}

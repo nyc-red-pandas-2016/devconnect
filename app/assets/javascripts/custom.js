@@ -49,6 +49,7 @@
 //     $NAV_MENU = $('.nav_menu'),
 //     $FOOTER = $('footer');
 
+
 // Sidebar
 $(document).ready(function() {
 
@@ -282,8 +283,6 @@ $(function() {
         $(this).delay(2500).fadeOut();
     });
 });
-
-
 
 // NProgress
 if (typeof NProgress != 'undefined') {

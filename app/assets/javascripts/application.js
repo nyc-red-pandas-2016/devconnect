@@ -16,8 +16,8 @@
 //= require react_ujs
 //= require components
 //= require bootstrap
-//= require custom.js
 //= require axios
 //= require react_rails_img
+//= require custom.js
 
 //= require_tree .

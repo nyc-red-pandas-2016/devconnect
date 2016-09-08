@@ -2220,6 +2220,16 @@ input.parsley-error, textarea.parsley-error, select.parsley-error {
   left: -13px;
   top: 1px;
 }
+
+.alert{
+    color: #fff;
+    text-align:center;
+    width:100%;
+    position:fixed;
+    z-index:999;
+    background-color: #6abf84;
+    }
+
 .item.bad .alert {
   left: 0;
   opacity: 1;

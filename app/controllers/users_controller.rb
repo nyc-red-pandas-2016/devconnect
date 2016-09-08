@@ -37,6 +37,8 @@ class UsersController < ApplicationController
 
     if @skill.save
       flash[:notice] = "You have successfully endorsed #{@endorsed.first_name.capitalize}!"
+      # binding.pry
+      # redirect_to "users/#{@endorsed.id}/show"
       render json: @endorsed.skills.uniq
     else
       flash[:error] = "Sorry your endorsement didn't go through. Please try again later."

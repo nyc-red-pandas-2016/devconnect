@@ -1,1 +1,8 @@
+<ul>
+  <% if flash[:error] %>
+    <% flash[:error].each do |error| %>
+    <li><%= error %></li>
+    <% end %>
+  <% end %>
+</ul>
 <%= react_component('Profile',{user: @user,skills:@user.skills.uniq,posts:@user.posts, current_user: current_user.id, avatar: current_user.avatar.url })%>

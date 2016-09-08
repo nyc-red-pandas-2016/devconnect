@@ -7,11 +7,11 @@ class HomeController < ApplicationController
 
   def top_mentors
     @mentors = User.where("is_mentor = ?", true).joins(:endorsements).uniq
-     @topMentores = Array.new
+    @topMentores = Array.new
     @mentors.each do |mentor|
         @topMentores << mentor if mentor.endorsements.count >= 3
     end
-    render json:@topMentores
+    render json:@topMentores.sample(4)
   end
 
   def top_trending

@@ -18,7 +18,6 @@
 //= require bootstrap
 //= require axios
 //= require react_rails_img
-//= require owl.carousel
 //= require custom.js
 
 //= require_tree .

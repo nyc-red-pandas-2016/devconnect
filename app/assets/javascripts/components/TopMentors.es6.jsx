@@ -19,16 +19,24 @@ class TopMentors extends React.Component {
   render(){
 
     return(
-     <div className="owl-carousel">
+     <div >
+     <div className="top-mentors row">
+      <h2>Top Mentors</h2>
+      <hr/>
            {this.state.topMentors.map((mentor,index)=>{
-             return(<div className="item" key={index}>
-              <img src="#" alt="profile/img" width="200" height="200"/>
-               {mentor.first_name}
-               {mentor.last_name}
-               {mentor.location}
-               </div>)
+             return(
+               <a  key={index} href={`users/${mentor.id}/show`}>
+               <div className="mentor-card col-xs-6 col-md-4">
+                <img  className="mentor-card-image" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" alt="profile/img" />
+                <span className="mentor-name"> {mentor.first_name} {mentor.last_name}</span>
+                <span className="mentor-location">{mentor.location}</span>
+               </div>
+             </a>
+           )
            })
            }
+      </div>
+      <hr/>
       </div>
 
     )

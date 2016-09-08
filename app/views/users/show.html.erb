@@ -1,1 +1,1 @@
-<%= react_component('Profile',{user: @user,skills:@user.skills,posts:@user.posts, current_user: current_user.id, avatar: current_user.avatar.url })%>
+<%= react_component('Profile',{user: @user,skills:@user.skills.uniq,posts:@user.posts, endorsements: @user.endorsements, current_user: current_user.id, avatar: current_user.avatar.url })%>

@@ -1,4 +1,31 @@
 class Profilestats extends React.Component{
+
+
+  handleSkillClick(event) {
+    event.preventDefault();
+    fetch(this.refs.skill.pathname, {
+      method: "POST",
+      headers: {
+        'dataType' : 'application/json',
+        'Accept' : 'application/json',
+        'Content-Type' : 'application/json',
+        'Access-Control-Allow-Origin' : 'http://localhost:3000'
+      },
+      body: JSON.stringify({
+        skill_id: event.target.id,
+        user_id: this.props.userProfile,
+        current_user: this.props.current_user
+      })
+    }).then((response) => response.json())
+    .then((response) => {
+      this.props.updateUserSkills(response);
+    }).catch((error) => {
+      console.log(error);
+    });
+  }
+
+
+
   render(){
     return(
       <div className="col-md-4 col-sm-4 col-xs-12">
@@ -14,9 +41,26 @@ class Profilestats extends React.Component{
                   <li>
                     <div className="block">
                       <div className="block_content">
-                        <p className="excerpt">skills
-                        </p>
-                        <small>skill test</small>
+                        <h3 className="excerpt">Skills</h3>
+                        {/*<small>skill test</small>*/}
+                      </div>
+
+                      {
+                        this.props.userSkills.map((skill, i) => {
+                          return (<a ref='skill' id={skill.id} onClick={this.handleSkillClick.bind(this)} key={i} href="/users/endorsement" className="btn btn-success"><i className="fa m-right-xs"></i>{skill.name}</a>)
+                        })
+                      }
+
+                    </div>
+                  </li>
+                </ul>
+                <ul className="list-unstyled timeline widget">
+                  <li>
+                    <div className="block">
+                      <div className="block_content">
+                        <h3 className="excerpt">Goals</h3>
+                        <p className="excerpt">Short paragraph about goals here</p>
+                        {/*<small>skill test</small>*/}
                       </div>
                     </div>
                   </li>

@@ -100,8 +100,8 @@ class RegistrationsController < Devise::RegistrationsController
         redirect_to '/users/edit'
         return
       elsif skill_delete_params
-        item = current_user.endorsements.find_by(skill_id: skill_delete_params[:id])
-        item.destroy
+        items = current_user.endorsements.where(skill_id: skill_delete_params[:id])
+        items.destroy_all
         redirect_to '/users/edit'
         return
       end

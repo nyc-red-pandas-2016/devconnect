@@ -1,27 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  # Setup paperclip
-  # config.paperclip_defaults = {
-  #   storage: :s3,
-  #   s3_credentials: {
-  #     bucket: ENV.fetch('dbcfinalproject'),
-  #     access_key_id: ENV.fetch('AKIAJ53VCGVJPZMKATEA'),
-  #     secret_access_key: ENV.fetch('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'),
-  #     s3_region: ENV.fetch('oregon'),
-  #   }
-  # }
-
-  config.paperclip_defaults = {
-  storage: :s3,
-  s3_credentials: {
-    bucket: 'dbcfinalproject',
-    access_key_id: 'AKIAJ53VCGVJPZMKATEA',
-    secret_access_key: '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',
-    s3_region: 'Oregon'
-    # s3_host_name: 's3-website-us-east-1.amazonaws.com'
-  }
-}
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -38,6 +17,18 @@ Rails.application.configure do
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
+
+  config.paperclip_defaults = {
+  storage: :s3,
+  s3_credentials: {
+    bucket: ENV['S3_BUCKET_NAME'],
+    access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+    secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
+    s3_region: ENV['AWS_REGION'],
+    s3_host_name: 's3-us-west-2.amazonaws.com',
+    s3_protocol: 'https'
+  }
+}
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
@@ -110,11 +101,11 @@ Rails.application.configure do
   #Action Mailer
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
- :address              => "smtp.gmail.com",
- :port                 => 587,
- :user_name            => ENV['gmail_username'],
- :password             => ENV['gmail_password'],
- :authentication       => "plain",
-:enable_starttls_auto => true
+   :address              => "smtp.gmail.com",
+   :port                 => 587,
+   :user_name            => ENV['GMAIL_SMTP_USER'],
+   :password             => ENV['GMAIL_SMTP_PASSWORD'],
+   :authentication       => "plain",
+  :enable_starttls_auto => true
 }
 end

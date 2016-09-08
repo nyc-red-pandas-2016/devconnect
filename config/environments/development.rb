@@ -1,27 +1,15 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  # Paperclip configuration
-  # config.paperclip_defaults = {
-  #   storage: :s3,
-  #   s3_credentials: {
-  #     bucket: ENV.fetch('dbcfinalproject'),
-  #     access_key_id: ENV.fetch('AKIAJ53VCGVJPZMKATEA'),
-  #     secret_access_key: ENV.fetch('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'),
-  #     s3_region: ENV.fetch('oregon'),
-  #     }
-  #   }
-
-    # Paperclip.options[:command_path] = "/usr/local/bin/convert"
-
     config.paperclip_defaults = {
     storage: :s3,
     s3_credentials: {
       bucket: 'dbcfinalproject',
-      access_key_id: 'AKIAIYO4DDDIONK6BHKQ',
-      secret_access_key: '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',
+      access_key_id: Figaro.env.access_key_id,
+      secret_access_key: Figaro.env.secret_access_key,
       s3_region: 'us-west-2',
-      s3_host_name: 's3-us-west-2.amazonaws.com'
+      s3_host_name: 's3-us-west-2.amazonaws.com',
+      s3_protocol: 'https'
     }
   }
 

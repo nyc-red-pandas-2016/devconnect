@@ -27,6 +27,7 @@ class Profileinfo extends React.Component{
 
 
   render(){
+    // debugger;
     let {id,first_name,last_name,location,status,is_mentor} = this.props.data
     return(
 
@@ -59,6 +60,23 @@ class Profileinfo extends React.Component{
                       <i className="fa fa-coffee"></i>
                       Mentoring: { is_mentor ? "Yes" : "Not at the moment" }
                     </li>
+
+                    { this.props.contactInfo.length!=0 ?
+                    <h6> Contact Info </h6>
+                    :
+                  <p></p>
+                    }
+                    {
+                      this.props.contactInfo.map((socialmedia, i) => {
+                        return (<li key={i}><i className="fa fa-briefcase user-profile-icon"></i>       {socialmedia.contact_type}<p></p>{socialmedia.contact_link}</li>)
+                      })
+                    }
+
+
+                    {/*<li>
+                      <i className="fa fa-briefcase user-profile-icon"></i> {this.props.}
+                    </li>*/}
+
                   </ul>
 
                   { this.props.dataOther.id==this.props.dataCurrent ?
@@ -72,6 +90,7 @@ class Profileinfo extends React.Component{
                   :
                   <p></p>
                 }
+
 
                   {/*Upload avatar*/}
                   {/*<a href='/users/avatar' className="btn btn-success"><i className="fa fa-edit m-right-xs"></i>Upload Profile Photo</a>

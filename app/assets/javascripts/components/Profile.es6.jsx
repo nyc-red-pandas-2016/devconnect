@@ -7,6 +7,7 @@ class Profile extends React.Component{
         posts:[],
         skills:[]
       }
+      this.updateUserSkills = this.updateUserSkills.bind(this)
   }
   componentDidMount(){
 
@@ -17,6 +18,10 @@ class Profile extends React.Component{
       skills:this.props.skills
     })
 
+  }
+
+  updateUserSkills(skills) {
+    this.setState({skills: skills})
   }
 
 
@@ -51,7 +56,7 @@ class Profile extends React.Component{
               </div>
                 <div className="x_content">
                  {/* display the profile stats */}
-                  <Profileinfo dataCurrent={this.props.current_user} dataOther={this.props.user.id} data={this.state.users} avatar={this.props.avatar}/>
+                  <Profileinfo dataCurrent={this.props.current_user} dataOther={this.props.user} data={this.state.users} avatar={this.props.avatar}/>
                   <Profiletabs  dataBio={this.state.bio} dataPosts={this.state.posts}/>
                   </div>
               </div>
@@ -59,7 +64,7 @@ class Profile extends React.Component{
          </div>
          {/* user stats skills bages */}
          <div className="row">
-              <Profilestats />
+              <Profilestats userSkills={this.state.skills} current_user={this.props.current_user} userProfile={this.props.user.id} updateUserSkills={this.state.updateUserSkills}/>
               <Profilebadges />
          </div>
       </div>

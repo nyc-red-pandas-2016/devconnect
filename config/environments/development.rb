@@ -21,7 +21,8 @@ Rails.application.configure do
       access_key_id: 'AKIAIYO4DDDIONK6BHKQ',
       secret_access_key: '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',
       s3_region: 'us-west-2',
-      s3_host_name: 's3-us-west-2.amazonaws.com'
+      s3_host_name: 's3-us-west-2.amazonaws.com',
+      s3_protocol: 'https'
     }
   }
 

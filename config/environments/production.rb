@@ -24,7 +24,7 @@ Rails.application.configure do
     bucket: ENV['S3_BUCKET_NAME'],
     access_key_id: ENV['AWS_ACCESS_KEY_ID'],
     secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
-    s3_region: ENV['AWS_REGION']
+    s3_region: ENV['AWS_REGION'],
     s3_host_name: 's3-us-west-2.amazonaws.com',
     s3_protocol: 'https'
   }
@@ -101,11 +101,11 @@ Rails.application.configure do
   #Action Mailer
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
- :address              => "smtp.gmail.com",
- :port                 => 587,
- :user_name            => ENV['gmail_username'],
- :password             => ENV['gmail_password'],
- :authentication       => "plain",
-:enable_starttls_auto => true
+   :address              => "smtp.gmail.com",
+   :port                 => 587,
+   :user_name            => ENV['GMAIL_SMTP_USER'],
+   :password             => ENV['GMAIL_SMTP_PASSWORD'],
+   :authentication       => "plain",
+  :enable_starttls_auto => true
 }
 end

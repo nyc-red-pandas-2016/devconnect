@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+skip_before_filter  :verify_authenticity_token
 
   def json
     @user = current_user
@@ -33,17 +34,27 @@ class UsersController < ApplicationController
   def endorsement
     @endorsed = User.find(params[:user_id])
     @endorser = User.find(params[:current_user])
-    @skill = Skill.find(params[:skill_id]).endorsements.new(endorsed_id: @endorsed.id, endorser_id: @endorser.id)
+    @skill = Skill.find(params[:skill_id])
 
-    if @skill.save
-      flash[:notice] = "You have successfully endorsed #{@endorsed.first_name.capitalize}!"
-      # binding.pry
-      # redirect_to "users/#{@endorsed.id}/show"
-      render json: @endorsed.skills.uniq
-    else
-      flash[:error] = "Sorry your endorsement didn't go through. Please try again later."
-      redirect_to "users/#{@endorsed.id}/show"
-    end
+
+      if @skill.endorsements.where(endorser_id: @endorser.id, endorsed_id: @endorsed.id).length == 0
+
+
+        if @endorsed.id != @endorser.id
+          @skill = Skill.find(params[:skill_id]).endorsements.new(endorsed_id: @endorsed.id, endorser_id: @endorser.id)
+
+          if @skill.save
+            flash[:notice] = "You have successfully endorsed #{@endorsed.first_name.capitalize}!"
+            # binding.pry
+            # redirect_to "users/#{@endorsed.id}/show"
+            render json: {skills: @endorsed.skills.uniq, endorsements: @endorsed.endorsements}
+            # @endorsed.endorsements
+          else
+            flash[:error] = "Sorry your endorsement didn't go through. Please try again later."
+            redirect_to "users/#{@endorsed.id}/show"
+          end
+        end
+      end
   end
 
 

@@ -5,10 +5,37 @@ class Profile extends React.Component{
         users: [],
         bio:'',
         posts:[],
-        skills:[]
+        skills:[],
+        endorsed_skill_count: []
       }
-      this.updateUserSkills = this.updateUserSkills.bind(this)
+      this.updateUserSkills = this.updateUserSkills.bind(this);
+      this.parseEndorsedSkills = this.parseEndorsedSkills.bind(this);
   }
+
+  parseEndorsedSkills(skills, endorsements) {
+    endorsed_skills = {};
+    for(i = 0; i < skills.length; i++) {
+      var skill = skills[i]
+      var count = 0
+
+      for(j = 0; j < endorsements.length; j++) {
+        var endorsement = endorsements[j]
+
+        if (endorsement.skill_id === skill.id) {
+          count++;
+        }
+      }
+      endorsed_skills[skill.name] = count;
+    }
+    this.setState({endorsed_skill_count: endorsed_skills});
+  }
+
+
+  componentWillMount() {
+    this.parseEndorsedSkills(this.props.skills, this.props.endorsements);
+  }
+
+
   componentDidMount(){
 
     this.setState({
@@ -20,8 +47,8 @@ class Profile extends React.Component{
 
   }
 
-  updateUserSkills(skills) {
-    this.setState({skills: skills})
+  updateUserSkills(response) {
+    this.setState({skills: response.skills, endorsed_skill_count: this.parseEndorsedSkills(response.skills, response.endorsements)});
   }
 
 
@@ -64,7 +91,7 @@ class Profile extends React.Component{
          </div>
          {/* user stats skills bages */}
          <div className="row">
-              <Profilestats userSkills={this.state.skills} current_user={this.props.current_user} userProfile={this.props.user.id} updateUserSkills={this.updateUserSkills}/>
+              <Profilestats userSkills={this.state.skills} current_user={this.props.current_user} userProfile={this.props.user.id} updateUserSkills={this.updateUserSkills} endorsed_skill={this.state.endorsed_skill_count}/>
               <Profilebadges />
          </div>
       </div>

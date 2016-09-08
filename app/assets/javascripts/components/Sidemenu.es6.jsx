@@ -61,11 +61,25 @@ class Sidemenu extends React.Component {
                           </li>
                           <li><a href="/topics/3/posts">Back-End Development</a>
                           </li>
-                          <li><a href="/topics/4/posts">Nerd Life</a>
+                          <li><a href="/topics/4/posts">Ruby</a>
                           </li>
-                          <li><a href="/topics/5/posts">Data Nerds</a>
+                          <li><a href="/topics/5/posts">Python</a>
                           </li>
-                          <li><a href="/topics/6/posts">Anything Interesting</a>
+                          <li><a href="/topics/6/posts">Technology News</a>
+                          </li>
+                          <li><a href="/topics/7/posts">DBC</a>
+                          </li>
+                          <li><a href="/topics/8/posts">HTML</a>
+                          </li>
+                          <li><a href="/topics/9/posts">Suggested Books</a>
+                          </li>
+                          <li><a href="/topics/10/posts">React</a>
+                          </li>
+                          <li><a href="/topics/11/posts">Javascript</a>
+                          </li>
+                          <li><a href="/topics/12/posts">HTTP</a>
+                          </li>
+                          <li><a href="/topics/13/posts">Random</a>
                           </li>
                         </ul>
                       </li>

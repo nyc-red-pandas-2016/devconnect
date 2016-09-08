@@ -18,6 +18,18 @@ Rails.application.configure do
   # Apache or NGINX already handles this.
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
+  config.paperclip_defaults = {
+  storage: :s3,
+  s3_credentials: {
+    bucket: 'dbcfinalproject',
+    access_key_id: ENV['access_key_id'],
+    secret_access_key: ENV['secret_access_key'],
+    s3_region: 'us-west-2',
+    s3_host_name: 's3-us-west-2.amazonaws.com',
+    s3_protocol: 'https'
+  }
+}
+
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass

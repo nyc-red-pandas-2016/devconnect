@@ -47,7 +47,7 @@ class Profilestats extends React.Component{
 
                       {
                         this.props.userSkills.map((skill, i) => {
-                          return (<a ref='skill' id={skill.id} onClick={this.handleSkillClick.bind(this)} key={i} href="/users/endorsement" className="btn btn-success"><i className="fa m-right-xs"></i>{skill.name} : {this.props.endorsed_skill[skill.name]}</a>)
+                          return (<a ref='skill' id={skill.id} onClick={this.handleSkillClick.bind(this)} key={i} href="/users/endorsement" className="btn btn-success"><i className="fa m-right-xs"></i>{skill.name}</a>)
                         })
                       }
 

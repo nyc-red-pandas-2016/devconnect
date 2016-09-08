@@ -7,6 +7,7 @@ class Profile extends React.Component{
         posts:[],
         skills:[]
       }
+      this.updateUserSkills = this.updateUserSkills.bind(this)
   }
   componentDidMount(){
 
@@ -19,10 +20,13 @@ class Profile extends React.Component{
 
   }
 
+  updateUserSkills(skills) {
+    this.setState({skills: skills})
+  }
+
 
 
   render(){
-
     return(
       <div>
           {/* this will display the page title */}
@@ -60,7 +64,7 @@ class Profile extends React.Component{
          </div>
          {/* user stats skills bages */}
          <div className="row">
-              <Profilestats />
+              <Profilestats userSkills={this.state.skills} current_user={this.props.current_user} userProfile={this.props.user.id} updateUserSkills={this.state.updateUserSkills}/>
               <Profilebadges />
          </div>
       </div>

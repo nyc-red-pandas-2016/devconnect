@@ -18,7 +18,6 @@ class Profilestats extends React.Component{
       })
     }).then((response) => response.json())
     .then((response) => {
-      debugger;
       this.props.updateUserSkills(response);
     }).catch((error) => {
       console.log(error);

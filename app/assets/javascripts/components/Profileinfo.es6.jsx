@@ -24,10 +24,12 @@ class Profileinfo extends React.Component{
     });
   }
 
+
+
   render(){
     let {id,first_name,last_name,location,status,is_mentor} = this.props.data
-
     return(
+
                 <div className="col-md-3 col-sm-3 col-xs-12 profile_left">
 
                   <div className="profile_img">
@@ -35,8 +37,8 @@ class Profileinfo extends React.Component{
                     {/* <!-- end of image cropping --> */}
                     <div id="crop-avatar">
                       {/* <!-- Current avatar --> */}
-                      <img className="img-responsive avatar-view" src="https://s-media-cache-ak0.pinimg.com/236x/40/00/d7/4000d7ed061f540a0180b6181184686d.jpg" alt="Avatar" title="Change the avatar"/>
-
+                      {/*<img className="img-responsive avatar-view" src= alt="Avatar" title="Change the avatar"/>*/}
+                      <img className="img-responsive avatar-view" src={this.props.avatar ? this.props.avatar : "https://s3-us-west-2.amazonaws.com/dbcfinalproject/profilePic.png"} alt="Avatar" title="Change the avatar"/>
                       {/* <!-- Loading state --> */}
                       <div className="loading" aria-label="Loading" role="img" tabIndex="-1"></div>
                     </div>
@@ -59,10 +61,22 @@ class Profileinfo extends React.Component{
                     </li>
                   </ul>
 
+                  { this.props.dataOther.id==this.props.dataCurrent ?
                   <a href={`/users/edit`} className="btn btn-success"><i className="fa fa-edit m-right-xs"></i>Edit Profile</a>
-                  <a onClick={this.handleRequestMentor.bind(this)} ref='profileData' className="btn btn-success"><i className="fa fa-edit m-right-xs"></i>Request Mentor</a>
+                    :
+                    <p></p>
+                  }
 
-                  <br />
+                  { this.props.dataOther.is_mentor ?
+                  <a onClick={this.handleRequestMentor.bind(this)} ref='profileData' className="btn btn-success"><i className="fa fa-edit m-right-xs"></i>Request Mentor</a>
+                  :
+                  <p></p>
+                }
+
+                  {/*Upload avatar*/}
+                  {/*<a href='/users/avatar' className="btn btn-success"><i className="fa fa-edit m-right-xs"></i>Upload Profile Photo</a>
+                  <br />*/}
+
 
                   {/* <!-- start skills --> */}
 

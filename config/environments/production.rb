@@ -1,6 +1,27 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # Setup paperclip
+  # config.paperclip_defaults = {
+  #   storage: :s3,
+  #   s3_credentials: {
+  #     bucket: ENV.fetch('dbcfinalproject'),
+  #     access_key_id: ENV.fetch('AKIAJ53VCGVJPZMKATEA'),
+  #     secret_access_key: ENV.fetch('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'),
+  #     s3_region: ENV.fetch('oregon'),
+  #   }
+  # }
+
+  config.paperclip_defaults = {
+  storage: :s3,
+  s3_credentials: {
+    bucket: 'dbcfinalproject',
+    access_key_id: 'AKIAJ53VCGVJPZMKATEA',
+    secret_access_key: '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',
+    s3_region: 'Oregon'
+    # s3_host_name: 's3-website-us-east-1.amazonaws.com'
+  }
+}
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -70,6 +91,7 @@ Rails.application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
 
   # Use a different logger for distributed setups.
   # require 'syslog/logger'

@@ -19,7 +19,10 @@ class Profile extends React.Component{
 
   }
 
+
+
   render(){
+
     return(
       <div>
           {/* this will display the page title */}
@@ -49,8 +52,8 @@ class Profile extends React.Component{
               </div>
                 <div className="x_content">
                  {/* display the profile stats */}
-                  <Profileinfo data={this.state.users} />
-                  <Profiletabs dataBio={this.state.bio} dataPosts={this.state.posts}/>
+                  <Profileinfo dataCurrent={this.props.current_user} dataOther={this.props.user} data={this.state.users} avatar={this.props.avatar}/>
+                  <Profiletabs  dataBio={this.state.bio} dataPosts={this.state.posts}/>
                   </div>
               </div>
           </div>

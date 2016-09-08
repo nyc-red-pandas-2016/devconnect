@@ -49,6 +49,11 @@
 //     $NAV_MENU = $('.nav_menu'),
 //     $FOOTER = $('footer');
 
+$(function(){
+  $("body owl-carousel").owlCarousel();
+})
+
+
 // Sidebar
 $(document).ready(function() {
 
@@ -283,7 +288,9 @@ $(function() {
     });
 });
 
-
+$(function(){
+  $(".owl-carousel").owlCarousel();
+})
 
 // NProgress
 if (typeof NProgress != 'undefined') {

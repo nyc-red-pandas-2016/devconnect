@@ -20,6 +20,9 @@ gem 'uglifier', '>= 1.3.0'
  # image helper for react
  gem 'react-rails-img'
 
+# owlcarousel-rails
+gem 'owlcarousel-rails'
+
  gem  'active_model_serializers'
 # Use CoffeeScript for .coffee assets and views
 # gem 'coffee-rails', '~> 4.2'

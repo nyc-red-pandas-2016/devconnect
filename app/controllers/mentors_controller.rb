@@ -7,6 +7,11 @@ class MentorsController < ApplicationController
       end
     @mentors = User.where(is_mentor:true)
     @locations = Cohort.all.map{|cohort| cohort.location}
+
+    # @mentor_avatars = {}
+    # @mentors.each do |mentor|
+    #   @mentor_avatars[mentor.id] = mentor.avatar
+    # end
   end
 
   def search

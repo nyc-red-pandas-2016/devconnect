@@ -1,5 +1,7 @@
 class Topic extends React.Component {
 
+
+
   render() {
     return (
 
@@ -31,6 +33,7 @@ class Topic extends React.Component {
                     <li>
                       <div className="block">
                         <div className="block_content">
+                          <img src=""/>
                           <p className="excerpt">{this.props.data.description}
                           </p>
                           <small>{this.props.data.posts.length} posts</small>

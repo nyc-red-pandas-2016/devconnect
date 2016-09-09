@@ -60,7 +60,7 @@ class Profilestats extends React.Component{
                     <div className="block">
                       <div className="block_content">
                         <h3 className="excerpt">Goals</h3>
-                        <p className="excerpt">Short paragraph about goals here</p>
+                        <p className="excerpt">{this.props.userGoals}</p>
                         {/*<small>skill test</small>*/}
                       </div>
                     </div>

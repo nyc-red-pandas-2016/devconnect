@@ -31,17 +31,32 @@ class PostList extends React.Component {
   render() {
     return(
       <div>
-        <form id="post-form" onSubmit={this.handleSubmit.bind(this)} action={`/topics/${this.props.topic.id}/posts`} method='post' >
-          <input ref='postTitle' type='text' name='title' placeholder='title'/><br/>
-          <input ref='postContent' type='text' name='content' placeholder='content'/><br/>
-          <input ref='userID' type='hidden' value={this.props.currentUser.id}/>
-          <input type="submit" value="Create Post"/>
-        </form><br/>
-        {
-          this.props.postList.map((postlist, i) => {
-            return ( <Post postData={postlist.post} userData={postlist.user} key={i} topicData={this.props.topic} />);
-          })
-        }
+          <table className="table table-striped">
+            <tbody className="table table-striped">
+                {
+                  this.props.postList.map((postlist, i) => {
+                    return ( <Post postData={postlist.post} userData={postlist.user} key={i} topicData={this.props.topic} />);
+                  })
+                }
+            </tbody>
+          </table>
+          <form id="post-form" className="form-horizontal form-label-left" onSubmit={this.handleSubmit.bind(this)} action={`/topics/${this.props.topic.id}/posts`} method='post' >
+            <div className="form-group">
+            <div className="col-md-4 col-sm-4 col-xs-12">
+              <input className="form-control" ref='postTitle' type='text' name='title' placeholder='title'/>
+            </div>
+            </div>
+            <div className="form-group">
+            <div className="col-md-4 col-sm-4 col-xs-12">
+                <textarea className="form-control" ref='postContent' type='text' name='content' placeholder='content'></textarea>
+            </div>
+            </div>
+            <div className="form-group">
+              <input ref='userID' type='hidden' value={this.props.currentUser.id}/></div>
+              <div className="form-group">
+              <input className="btn btn-primary" type="submit" value="Create Post"/>
+              </div>
+          </form>
       </div>
     );
   }

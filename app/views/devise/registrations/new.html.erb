@@ -1,79 +1,84 @@
-<h2>Sign up</h2>
+<% if flash[:error] %>
 <ul>
-  <% if flash[:error] %>
-    <% flash[:error].each do |error| %>
-    <li><%= error %></li>
-    <% end %>
+  <% flash[:error].each do |error| %>
+  <li><%= error %></li>
   <% end %>
 </ul>
+<% end %>
+<div id="register-form" class="form-horizontal form-label-left input_mask">
+<h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name, autofocus: true, required:true %>
+  <div class="field col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+    <%= f.text_field :first_name, class:"form-control has-feedback-left", placeholder:"first_name", autofocus: true, required:true %>
+    <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
   </div>
 
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name, autofocus: true, required:true %>
+  <div class="field col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+    <%= f.text_field :last_name,class:"form-control has-feedback-right",placeholder:"last_name", autofocus: true, required:true %>
+      <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
   </div>
 
 
-<div class="field">
-  <%= f.label :location %><br />
-  <%= f.text_field :location, autofocus: true %>
+<div class="field col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+  <%= f.text_field :location,class:"form-control has-feedback-left",placeholder:"location", autofocus: true %>
+  <span class="fa fa-map-marker form-control-feedback left" aria-hidden="true"></span>
 </div>
+
+
+  <div class="field col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+    <%= f.email_field :email,class:"form-control has-feedback-right",placeholder:"email", autofocus: true %>
+    <span class="fa fa-envelope form-control-feedback right" aria-hidden="true"></span>
+  </div>
 
 <!-- <div class="field">
   <%= f.label :are_you_mentor %><br />
   <%= f.text_field :is_mentor, autofocus: true %>
 </div> -->
 
-<div class="field">
-  <%= f.label :are_you_mentor %><br />
-  <%= f.check_box :is_mentor%>
-</div>
 
-  <div class="field">
+<div class="field col-md-6 col-sm-6 col-xs-12 form-group">
     <%= f.label :cohort_name %><br />
-    <%= f.select :cohort_name, @cohortsnames %>
+    <%= f.select :cohort_name,@cohortsnames,{} , {class:"form-control"} %>
   </div>
 
-  <div class="field">
+  <div class="field col-md-6 col-sm-6 col-xs-12 form-group">
     <%= f.label :cohort_location %><br />
-    <%= f.select :cohort_location, @cohortslocations %>
+    <%= f.select :cohort_location, @cohortslocations ,{} , {class:"form-control"}%>
   </div>
 
-  <div class="field">
+  <div class="field col-md-6 col-sm-6 col-xs-12 form-group ">
     <%= f.label :cohort_year %><br />
-    <%= f.select :cohort_year, @cohortsyears %>
+    <%= f.select :cohort_year, @cohortsyears ,{} , {class:"form-control"}%>
   </div>
 
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+  <div class="clearfix"></div>
+  <div class="field ">
+    <%= f.label :are_you_mentor %><br />
+    <div class="icheckbox_flat-green">
+      <%= f.check_box :is_mentor%>
+      <ins class="iCheck-helper"></ins>
+    </div>
   </div>
 
-
-  <div class="field">
+  <div class="field col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "off", required:true %>
+    <%= f.password_field :password, autocomplete: "off", required:true ,class:"form-control"%>
   </div>
 
-  <div class="field">
+  <div class="field col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off", required:true %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", required:true ,class:"form-control" %>
   </div>
 
-  <div class="actions">
+  <div class="actions form-group">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
-
 <%= render "devise/shared/links" %>
+</div>

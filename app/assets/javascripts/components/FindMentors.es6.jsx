@@ -9,7 +9,7 @@ class FindMentors extends React.Component {
   componentDidMount(){
 
     this.setState({
-      mentors:this.props.mentors,
+      mentors: this.props.mentors,
       locations:this.props.locations,
       avatars: this.props.avatars
     })
@@ -60,7 +60,7 @@ class FindMentors extends React.Component {
 
         {this.state.mentors.map((mentor,index)=>{
           return(
-            <Mentor  data={mentor} key={index}/>
+            <Mentor  avatar={this.props.avatars} data={mentor} key={index}/>
           )
         })}
         </div>

@@ -1,7 +1,19 @@
 class Mentor extends React.Component {
   viewProfile(){}
 
+  componentWillMount() {
+    avatar_url = " "
+
+    for (i = 0; i < this.props.avatar.length; i++ ) {
+      if (this.props.data.id === this.props.avatar[i].id) {
+        avatar_url = this.props.avatar[i].url
+      }
+    }
+  }
+
+
   render(){
+
     let {id,bio,first_name,last_name,email,location,status,experience} = this.props.data
     var skills = this.props.data.skills
 
@@ -29,7 +41,7 @@ class Mentor extends React.Component {
               </div>
 
               <div className="right col-xs-5 text-center">
-              <img src="/assets/profilePic.png" className="img-circle img-responsive"/>
+              <img src={avatar_url.match('missing') ? "https://s3-us-west-2.amazonaws.com/dbcfinalproject/profilePic.png" : avatar_url } className="img-circle img-responsive"/>
               </div>
           </div>
             <div className="col-xs-12 bottom text-center">

@@ -19,14 +19,13 @@ class TopMentors extends React.Component {
   render(){
 
     return(
-     <div >
+     <div className="container-fluid">
      <div className="top-mentors row">
-     <div className="clearfix"></div>
       <h2>Top Mentors</h2>
-      <hr/>
+      <div className="clearfix"></div>
            {this.state.topMentors.map((mentor,index)=>{
              return(
-               <div className="col-md-3 col-sm-3 col-xs-12 profile_details"  key={index}>
+               <div className="col-md-2 col-sm-2 col-xs-12 profile_details"  key={index}>
                  <div className="well profile_view">
                    <div className="col-sm-12">
                    <h4 className="brief">{mentor.location}</h4>

@@ -15,14 +15,13 @@ class Profiletabs extends React.Component{
           <ul id="myTab" className="nav nav-tabs bar_tabs" role="tablist">
             <li role="presentation" className="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Information</a>
             </li>
-            <li role="presentation" className=""><a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Projects Worked on</a>
-            </li>
+            {/*<li role="presentation" className=""><a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Projects Worked on</a>
+            </li>*/}
             <li role="presentation" className=""><a href="#tab_content3" role="tab" id="profile-tab2" data-toggle="tab" aria-expanded="false">My Posts</a>
             </li>
           </ul>
           <div id="myTabContent" className="tab-content">
             <div role="tabpanel" className="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
-                <h4>Bio</h4>
                 {bio}
             </div>
             <div role="tabpanel" className="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
@@ -95,7 +94,7 @@ class Profiletabs extends React.Component{
                 {posts.map((post,index)=>{
                   return(
                     <li key={index}>
-                      <img src="https://s-media-cache-ak0.pinimg.com/236x/40/00/d7/4000d7ed061f540a0180b6181184686d.jpg" className="avatar" alt="Avatar"/>
+                      <img src="https://s3-us-west-2.amazonaws.com/dbcfinalproject/new-post-xxl.png" className="avatar" alt="Avatar"/>
                       <div className="message_date">
                         <h3 className="date text-info">24</h3>
                         <p className="month">May</p>
@@ -113,7 +112,7 @@ class Profiletabs extends React.Component{
                   )
                 })}
                 </ul>
-              
+
                 {/* <!-- end recent activity --> */}
             </div>
           </div>

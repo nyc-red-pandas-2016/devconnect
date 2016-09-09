@@ -1584,76 +1584,33 @@ Cohort.create(name:"Grasshoppers", location: "Washington DC", year: 2016)
 Cohort.create(name:"Grasshoppers", location: "Washington DC", year: 2017)
 Cohort.create(name:"Grasshoppers", location: "Washington DC", year: 2018)
 
-bio1 = "I was born on February seventh, 1990. I am the youngest of three, and I live in Tehran, Iran. I was completely blind from birth, and only have the ability to perceive light, and obviously, the absence of it.
 
-My journey into the world of programming began when I was fourteen.
+bio1 = 'I live in NYC and since Feb 2015 I’m the Head of Engineering of Better — a company rethinking how mortgages are done.
 
-There was an effort about eleven years ago to record programming books for the blind. Since creating braille copies of books are more expensive and time-consuming, this experiment was done with audio, not braille.
+Before Better, I was at Spotify for nearly 6 years. I spent 2.5 years in Stockholm managing the “Analytics” team and then 3.5 years in NYC building up and managing the machine learning team. I built the first version of the system behind most of Spotify’s music recommendations, such as “Related Artists”, Radio, Discover Weekly, etc.'
 
-I don’t remember the author of the book. However, I do remember that this book was called “Visual Basic 6.0”.
+bio2 = 'Way back in October 2007, I originally launched Speckyboy Design Magazine as my personal freelance portfolio. Somewhere over the consequent years, things changed dramatically and evolved into the web design magazine that you see today.
+Based in the small, but beautiful, Scottish city of Inverness and supported by a remote team of writers and editors, we publish insightful tutorials and tips, time-saving techniques and resources, and inspirational art, covering web and mobile app design, UX design, graphic design, and even the occasional Lego post. We love to showcase the best and most innovative web design styles, keep you up to date with the latest in current web and mobile design trends and highlight the latest in web technologies.'
 
-For those of you who don’t know, those days Visual Basic was one of the easiest languages to get started with, and one of its main selling points, apart from the fact that it was created by Microsoft and you could write applications for Windows with it, was the ease with which you could create a graphical user interface (GUI). So as you can imagine, the book was centered around creating a UI that reacted to user input, such as a couple of text boxes that had a plus sign between them. When you clicked the “Add!” button, it would display the result of adding the contents of the two text boxes together. Neat, huh?
+bio3 = "My expertise and interest lies in front-end technologies, including HTML/5, CSS, JavaScript (as well as frameworks like jQuery, MooTools, and Dojo Toolkit). My server side skills revolve around PHP and Python. I enjoy dabbling in mobile development and edge devices and environments. I focus on open source contributing and evangelism, as they open a world of possibilities and rewards for their hard-working developers. My philosophy on learning to use web technologies is always the same: experiment, fail, fix, fail again, fix again. Reading books will only get you so far -- you should spend time with your debugger, experimenting away with whichever technology you need to learn. Always keep an open mind, use tools you wouldn't usually use, and never give up."
 
-Except, that didn’t really strike my fancy.
+bio4 = "Stoyan Stefanov is a Facebook engineer, ex-Yahoo, architect of the YSlow 2.0 performance tool and creator of the smush.it image optimization tool! He's the author of JavaScript for PHP developers (O'Reilly), JavaScript Patterns (O'Reilly), Object-Oriented JavaScript (Packt Publishing), The Book of Speed (online), and a contributor to High-Performance JavaScript (O'Reilly) and Even Faster Web Sites (O'Reilly).
 
-I wanted something more, and the book had failed to give it to me.
+Stoyan is a Zend-certified engineer, blogs at phpied.com and jspatterns.com and speaks at conferences and meetups around the world (Velocity, JSConf, OSCON, Web Directions, Fronteers...)"
 
-I wanted to create… a game. A game that blind people could play. A game that would give them an immersive audio experience. Something that was amazing, like all those awesome games my brothers could play on PlayStation.
-
-This was by no means an original idea. In fact, I got the idea after enjoying some of Jim Kitchen’s audio games. The experience was truly unique, in that it was something built specifically for the blind, offering an unparalleled experience. Of course, I’m always against providing a more accessible solution instead of making mainstream products accessible (AKA creating “blind ghetto products”). However, since most games are inherently reliant on sight, I find it an unfair expectation.
-
-I went on to create a game I simply called Swimming. The goal of the game was simple: keep swimming as fast as you can (with the up arrow key), and turn left or right depending on which ear you hear the beeping sound from (with the left/right arrow keys). For example, if you hear a beeping sound from the left, you must turn left, and if you hear the sound from the right, turn right. If you failed to turn, you would hit the side of the pool, getting stunned for a few seconds.
-
-This was by no means a success story, though.
-
-For one thing, I didn’t have a proper domain. I was living in Iran and I didn’t have a source of income, so even if there were no sanctions preventing me from paying anything, I couldn’t ask my parents to do that. That was just not my sort of thing.
-
-Then there was the issue of real-world experience: reading a book about how to create GUIs with an IDE that allows you to drag-and-drop controls and generates code for you behind the scenes does not teach you programming. I remember my swimming game had three functions, and those were there because the Visual Basic 6.0 IDE had generated them for me. Later when I joined a few friends to found Lighttech Interactive, the very first sentence i heard from my friend Robert Osztolykan was, “Dude, how can you read your code?”
-
-So, in the end, that project flopped. However, it showed me something very, very important: I liked programming. It made me feel good to be able to make computers do things that I wanted. To help others."
-
-  bio2 = "I started my first job as a programmer in 1993. The very first line of code I wrote was in C++ under MS-DOS. The programming environment was called The Programmer’s Workbench. The application I worked on was GUI-driven, with menus, dialog boxes and all kinds of other widgets, all written from scratch in C++. I’ll never forget the feeling of being overwhelmed by the sheer amount of classes I had to understand and learn in order to do anything at all. A very humbling experience, but one that has served me well throughout my career, when I had to quickly become familiar with existing or ‘legacy’ code.
-My next programming environment was Visual C++ under Windows 3.1. A much more powerful arsenal of tools, with Microsoft Foundation Classes at its base (I was so grateful that the source code for the MFC base classes was miraculously available, otherwise life would have been REALLY hard.) Still, a lot of things to learn in order to be productive: how to define a project, how to specify all the compile-time and link-time dependencies, etc. The debugger included in Visual C++ though was amazing, a real life saver. Compiling and linking the code used to take forever, and was responsible I think for the popularity of Minesweeper and Solitaire among programmers.
-There was a steep learning curve in going from MS-DOS to Windows, mainly because I had to understand event-driven programming and learn the low-level Windows SDK, which was still needed even though MFC abstracted a lot of it away. Charles Petzold’s book on Windows programming was our bible at the time.
-Next I discovered Visual Basic. Although a step back in terms of power and expressivity compared to Visual C++, the productivity I was able to gain by using it blew me away. Looking back, it was my first experience with an interpreted language (other than the toy programs I had written in Basic.) Even programming in MS Access felt good and liberating compared to the rigor of Visual C++.
-After a few years of working exclusively with Microsoft tools and environments, I switched to Unix and Linux. Talk about a learning curve, but also about a breath of fresh air! I remember getting a question in an interview about how I view Unix vs. Windows, and I answered that to me Unix is a democracy, while Windows is a dictatorship. It was exhilarating to learn the Unix way of doing things by composing small well defined tools and libraries into powerful programs. Also, Linux was FREE!
-I slowly drifted away from being a full-time programmer to being a systems/network engineer. This was in 1998/1999. At that time, I fell in love hard with Perl. Again, an interpreted language was helping my productivity to skyrocket. I felt so much joy in being able to automate most of my tasks using Perl. Oh, how good it felt to stitch together HTML in a Perl CGI script, or to produce automated tabular reports! I devoured the Camel book and I wrote vast amounts of Perl. My regular expression skills were extremely sharp at the time.
-Around 2004 I was working as a test engineer and needed a language that was cross-platform, in order to write automated test harnesses that had to run on Windows, Solaris, and HP-UX. I discovered Python. I was still using Perl, but as everybody who used Perl as a language for a medium-sized team, it tends to become write-only, i.e. you can’t read it after a while due to everybody’s different coding style and formatting. I abandoned Perl for Python in a heartbeat. The fact that all code looked the same was a big plus. Python had very strong Windows support, which was essential for me at the time.
-Python also came with batteries included! It took some time to learn its standard library, but I loved every minute of it. It rekindled my love for programming, which had become stale to say the least. I became very involved in the Python community, especially in the testing area, and this was also very satisfying."
-
-bio3 = "I was born in Bucharest, Romania, and when I was 13 I moved to Israel. In 1962-66 I attended the technical high school Bosmat in Haifa, where I studied electronics. I continued in 1966-70 at the Technion, Israel Institute of Technology, where I received a B.Sc. in Electrical Engineering. By then I had enough experience with computer electronics and software to realize that my aptitude and temperament were better suited to a career in software. So, while teaching electronics at a local college, I studied in the Technion's Department of Computer Science, and I received an M.Sc. in 1971.
-
-In 1971-76 I lived in London, U.K. After briefly working at the University of London's Institute of Computer Science, I started to do freelance programming. This acquainted me with many different types of computers, systems, and applications. One assignment was in France. The best part was that I could work only as much as I wanted, which allowed me to pursue my research projects at the University of London. In 1975 I received a Ph.D. in Computer Science from the Imperial College.
-
-In 1976 I moved to Canada, and I have lived in Toronto ever since. I worked briefly at Geac, and then I started my own company, Andsor Research Inc., a one-man company through which I could work as an independent consultant in software development, support, and research. Dealing directly with the users, I created and maintained original applications on minicomputers in manufacturing, utilities, retail, distribution, and publishing. My usual approach was to create a fully customized system that integrated all the customer's software needs, and to develop a long-term relationship by keeping it up to date: I implemented the endless enhancements and changes constantly needed in a business environment. The longest relationship lasted 30 years.
-
-And yet, all this took only a small part of my time. Most of my work was in R&D: studying the human and software aspects of application development and maintenance, and establishing when it is and when it is not possible to improve matters through theories, methodologies, or development systems. I discovered that most of these concepts are useless, and what is needed is simply programming expertise. At the same time, I developed some programming tools to implement various ideas in data management: editors, interpreters, and some versatile means to handle complex, interrelated text and data files. I used these tools in my own work, and in 1986-92 I sold some versions to others. I found out, however, that most programmers prefer tools that merely conform to the latest software fads, so I discontinued my marketing activities. In any case, I know now, it is best for programmers to create their own tools, and to rely only occasionally on generic ones.
-
-"
-
-bio4 = "First off, my name is Jeremy and I was born April 1st 1985 in Oakland at Highland Hospital.  My favorite thing in the whole wide world are computers, more precisely, HTML code. I have had an undying curiosity about how things are put together. The structure of HTML has caused me many unsleeping hours of obsession, sitting up late at night surfing the internet just to look at the code on people's web pages, and when I can’t actually see it… There will be hell to pay! Ha ha, just kidding! There is no code I can’t actually see because “I got it like that!”
-Another interest of mine is bikes, primarily road-bikes; they are the fastest next to bikes with motors. I love to feel the wind on my brow as I ride down a big hill. I guess you could probably say I am crazy the way I ride, taxi cabs hate me! I will cut you off and I get a bad case of road rage anytime anyone honks at me. I guess one of my goals is to become a bicycle messenger, those guys are so cool!
-I also like to spend time with my loved ones: Mom, Dad, Grandpa, Grandma, Girlfriend, and some of my friends. When I hang-out with my dad we usually go hunting or to see my grandpa who lives in a home for people with Alzheimer’s. That is such a sad disease! I usually just hang-out with my mom at home or go out to eat with both my parents. I seldom see my grandma; I wish I had the chance to see her more. Hanging out with my girl is a whole different story. I’m not going to go into too much detail about me and her, but I will say we love to watch movies. I’m trying to get her into the cult horror flicks that I like which hasn’t been too difficult thus far.
-Now onto the important stuff, what my life was like, what it is like now, and what I want the future to hold. I have friends, I am close with my family, and I have a girlfriend. I actually just spent the last 11 months in a program called Walden House, I moved out on Friday. On Monday I am going to go to school, and then after school go to the Family Court building in San Francisco and graduate another program through SF County called Drug Court. Those people told me I could never do it! I proved them wrong, but that’s not the point, I did it for me and only me, everything else is just an added bonus. My mom and dad will be there, my girl will be there, and most of all, I will be there!
-I really don’t know what I want for the future. I know I want a career and that is why I am attending Heald. Hopefully I will be able to get a job in the tech industry, but what I really want is to start my own business. I will install fiber-optics in new buildings, setup their networks, and maintain their networks. I plan to create my own niche, one where only I know what to do, then they can’t fire me because I’m the only one that knows what to do! Ha ha ha!"
-
-bio5 = "From an early age I’ve always been deeply interested in computing. It was my dad, introducing me to the computer systems at his work place that first sparked this interest. I can always remember the feeling of wanting to know just how computers worked, why they worked and what else they could do...The world of computers is growing at an un-recordable rate everyday, computers are the most influential tools in our lives, they are our present and future. In my opinion nothing on the planet can measure the exponential growth and excitement in the computing industry, and industry which I want to be a part of, particularly Software Engineering. My three major interests and passions are Computer Science, Maths and Music, and I believe that there is a creative fusion between all these disciplines. I engage wholeheartedly in these areas both in my school courses and out of school, and hope that I will be able to continue doing so on my chosen course and in the extra-curricular opportunities at university.I find it amazing to watch as the digital revolution sculpts society at a rate that has never before been seen; there is so much to still be discovered. Quantum computing is a topic that particularly interests me, stemming from my studies and keen interest in physics....
-
-"
-statuses = ["Employed", "Unemployed", "Student"]
-bios = [bio1, bio2, bio3, bio4, bio5]
+statuses = ["Employed", "Unemployed", "Student", "Freelance"]
+bios = [bio1, bio2, bio3, bio4]
 mentor = [true, false]
 cohort = Cohort.all.sample
-locations = ["New York","Chicago","Washington DC","San Francisco","Austin","
-Seattle"]
-User.create!(email: "guest@test.com", password: 'password', first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, bio: bios.sample, cohort_id: cohort.id, cohort_name: cohort.name, cohort_location: cohort.location, cohort_year: cohort.year, location: locations.sample, status: statuses.sample, goals: Faker::Hacker.say_something_smart,is_mentor: mentor.sample)
+locations = ["New York","Chicago","San Francisco","Austin","Seattle"]
+
+User.create!(email: "guest@test.com", password: 'password', first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, bio: bios.sample, cohort_id: cohort.id, cohort_name: cohort.name, cohort_location: cohort.location, cohort_year: cohort.year, location: locations.sample, status: statuses.sample, goals: Faker::Hacker.say_something_smart ,is_mentor: mentor.sample)
 
 15.times do
   User.create!(email: Faker::Internet.email, password: 'password', first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, bio: bios.sample, cohort_id: cohort.id, cohort_name: cohort.name, cohort_location: cohort.location, cohort_year: cohort.year, location: locations.sample, status: statuses.sample, goals: Faker::Hacker.say_something_smart,is_mentor: mentor.sample)
 end
 
-skills = ["Ruby", "Interview prep", "Algorithms", "Java", "Python", "React Native", "Mobile Design", "Front end design", "Javascript", "jQuery", "C++"]
-
+skills = ["Ruby", "Interview prep", "Algorithms", "Java", "Python", "React Native", "Mobile Design", "Front end design", "Javascript", "jQuery", "Java"]
 
 skills.each do |skill|
   Skill.create(name: skill.downcase)
@@ -1665,30 +1622,35 @@ User.all.each do |user|
   end
 end
 
-topics = ["Job opportunities", "Front-End Development", "Back-End development", "Ruby", "Python", "Technology News", "DBC", "HTML", "Suggested Books", "React", "Javascript", "HTTP", "Random"]
 
-topics.each do |topic|
-  Topic.create(name: topic, description: Faker::Hipster.paragraph(2))
-end
+Topic.create(name: "Job opportunities", description: 'Here we discuss careers in Computer Science, Computer Engineering, Software Engineering, and related fields.')
+Topic.create(name: "Front-End Development", description: 'Do you want to push browsers to their limits with HTML5, CSS3 and JavaScript?')
+Topic.create(name: "Back-End development", description: 'Here is where we discuss the various back end scripting languages and their uses')
+Topic.create(name: "Ruby", description: 'Discussion and technical support for using and deploying Ruby.')
+Topic.create(name: "Python", description: 'A forum for general discussion of the Python programming language.')
+Topic.create(name: "Technology News", description: 'A place to share and discuss the latest developments, happenings and curiosities in the world of technology')
+Topic.create(name: "DBC", description: 'A place to discuss the happenings of DevBootcamp!')
+Topic.create(name: "Suggested Books", description: 'Regardless of language, what are you favourite programming books?')
+Topic.create(name: "React", description: 'Come here to discuss all things React and React Native.')
+Topic.create(name: "Javascript", description: 'Need help with the (primarily) client-side programming language? This is the place. Includes discussion on AJAX (Asynchronous JavaScript and XML)')
 
-80.times do
+
+60.times do
   Post.create(user_id: User.all.sample.id, title: Faker::Hacker.say_something_smart, content: Faker::Hacker.say_something_smart, postable_id: Topic.all.sample.id, postable_type: "Topic")
 end
 
-# 5.times do
-#   Post.create(user_id: User.all.sample.id, title: Faker::Hipster.sentence, content: Faker::Hipster.sentences(1), postable_id: Cohort.all.sample.id, postable_type: "Cohort")
-# end
 
-100.times do
+20.times do
   Response.create(user_id: User.all.sample.id, post_id: Post.all.sample.id, content: Faker::Hacker.say_something_smart)
 end
 
-contact_type = ["LinkedIn", "Twitter", "Facebook", "Github", "Slack"]
-5.times do |n|
-  ContactInfo.create(contact_type: contact_type.sample, contact_link: Faker::Internet.email, user_id: User.find(n+1).id)
+
+User.all.each do |user|
+  contact_type = ["LinkedIn", "Twitter", "Facebook", "Github", "Slack"]
+  contact_link = ["https://www.linkedin.com/in/#{user.first_name}-#{user.last_name}","@#{user.first_name}","https://www.facebook.com/#{user.first_name}","https://github.com/#{user.first_name}#{user.last_name}","@#{user.last_name}"]
+  n = 0
+  5.times do
+    ContactInfo.create(contact_type: contact_type[n], contact_link: contact_link[n], user_id: user.id)
+    n += 1
+  end
 end
-# 10.times do
-#   contact_type.each do |type|
-#     ContactInfo.create(contact_type: type, contact_link: Faker::Internet.email, user_id: User.all.sample.id)
-#   end
-# end

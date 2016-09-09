@@ -17,7 +17,7 @@ class Topnav extends React.Component {
       <ul className="nav navbar-nav navbar-right">
         <li className="">
           <a href="javascript:;" className="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-              <img src={this.props.img_src} /> {first_name} {last_name}
+              <img src={this.props.avatar ? this.props.avatar : "https://s3-us-west-2.amazonaws.com/dbcfinalproject/profilePic.png"} /> {first_name} {last_name}
             <span className=" fa fa-angle-down"></span>
           </a>
           <ul className="dropdown-menu dropdown-usermenu pull-right">

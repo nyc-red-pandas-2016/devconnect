@@ -11,7 +11,7 @@ class HomeController < ApplicationController
     @mentors.each do |mentor|
         @topMentores << mentor if mentor.endorsements.count >= 3
     end
-    render json:@topMentores.sample(4)
+    render json:@topMentores.sample(3)
   end
 
   def top_trending

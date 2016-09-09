@@ -57,7 +57,7 @@ class Profile extends React.Component{
     return(
       <div>
           {/* this will display the page title */}
-         <Pagetitle />
+         <Pagetitle userName={this.props.user.first_name} />
          {/* bootstrap row section  */}
          <div className="row">
            <div className="col-md-12 col-sm-12 col-xs-12">

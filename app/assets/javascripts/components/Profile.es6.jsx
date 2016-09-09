@@ -67,7 +67,7 @@ class Profile extends React.Component{
                 <ul className="nav navbar-right panel_toolbox">
                   <li><a className="collapse-link"><i className="fa fa-chevron-up"></i></a>
                   </li>
-                  <li className="dropdown">
+                  {/*<li className="dropdown">
                     <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i className="fa fa-wrench"></i></a>
                     <ul className="dropdown-menu" role="menu">
                       <li><a href="#">Settings 1</a>
@@ -75,9 +75,9 @@ class Profile extends React.Component{
                       <li><a href="#">Settings 2</a>
                       </li>
                     </ul>
-                  </li>
-                  <li><a className="close-link"><i className="fa fa-close"></i></a>
-                  </li>
+                  </li>*/}
+                  {/*<li><a className="close-link"><i className="fa fa-close"></i></a>
+                  </li>*/}
                 </ul>
                 <div className="clearfix"></div>
               </div>
@@ -91,7 +91,7 @@ class Profile extends React.Component{
          </div>
          {/* user stats skills bages */}
          <div className="row">
-              <Profilestats userSkills={this.state.skills} current_user={this.props.current_user} userProfile={this.props.user.id} updateUserSkills={this.updateUserSkills} endorsed_skill={this.state.endorsed_skill_count}/>
+              <Profilestats userSkills={this.state.skills} current_user={this.props.current_user} userProfile={this.props.user.id} updateUserSkills={this.updateUserSkills} endorsed_skill={this.state.endorsed_skill_count} userGoals={this.props.user.goals}/>
               <Profilebadges />
          </div>
       </div>

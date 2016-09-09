@@ -10,7 +10,8 @@ class FindMentors extends React.Component {
 
     this.setState({
       mentors:this.props.mentors,
-      locations:this.props.locations
+      locations:this.props.locations,
+      avatars: this.props.avatars
     })
 
   }

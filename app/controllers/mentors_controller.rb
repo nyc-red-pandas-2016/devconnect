@@ -8,9 +8,14 @@ class MentorsController < ApplicationController
     @mentors = User.where(is_mentor:true)
     @locations = Cohort.all.map{|cohort| cohort.location}
 
-    @mentor_avatars = {}
+    @mentor_avatars = []
+
     @mentors.each do |mentor|
-      @mentor_avatars[mentor.id] = mentor.avatar
+      avatar = {
+      :id => mentor.id,
+     :url => mentor.avatar
+    }
+    @mentor_avatars << avatar
     end
   end
 

@@ -27,7 +27,6 @@ class Profileinfo extends React.Component{
 
 
   render(){
-    // debugger;
     let {id,first_name,last_name,location,status,is_mentor} = this.props.data
     return(
 
@@ -39,7 +38,7 @@ class Profileinfo extends React.Component{
                     <div id="crop-avatar">
                       {/* <!-- Current avatar --> */}
                       {/*<img className="img-responsive avatar-view" src= alt="Avatar" title="Change the avatar"/>*/}
-                      <img className="img-responsive avatar-view" src={this.props.avatar ? this.props.avatar : "https://s3-us-west-2.amazonaws.com/dbcfinalproject/profilePic.png"} alt="Avatar" title="Change the avatar"/>
+                      <img className="img-responsive avatar-view" src={this.props.avatar.match('missing') ? "https://s3-us-west-2.amazonaws.com/dbcfinalproject/profilePic.png" : this.props.avatar } alt="Avatar" title="Change the avatar"/>
                       {/* <!-- Loading state --> */}
                       <div className="loading" aria-label="Loading" role="img" tabIndex="-1"></div>
                     </div>

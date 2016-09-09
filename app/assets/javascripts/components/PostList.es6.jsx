@@ -30,26 +30,7 @@ class PostList extends React.Component {
 
   render() {
     return(
-      <div className="row">
-        <div className="col-md-12 col-sm-12 col-xs-12">
-        <div className="x_panel">
-        <form id="post-form" className="form-horizontal form-label-left" onSubmit={this.handleSubmit.bind(this)} action={`/topics/${this.props.topic.id}/posts`} method='post' >
-          <div className="form-group">
-          <div className="col-md-4 col-sm-4 col-xs-12">
-            <input className="form-control" ref='postTitle' type='text' name='title' placeholder='title'/>
-          </div>
-          </div>
-          <div className="form-group">
-          <div className="col-md-4 col-sm-4 col-xs-12">
-              <textarea className="form-control" ref='postContent' type='text' name='content' placeholder='content'></textarea>
-          </div>
-          </div>
-          <div className="form-group">
-            <input ref='userID' type='hidden' value={this.props.currentUser.id}/></div>
-            <div className="form-group">
-            <input className="btn btn-primary" type="submit" value="Create Post"/>
-            </div>
-        </form><br/>
+      <div>
           <table className="table table-striped">
             <tbody className="table table-striped">
                 {
@@ -59,8 +40,23 @@ class PostList extends React.Component {
                 }
             </tbody>
           </table>
-        </div>
-        </div>
+          <form id="post-form" className="form-horizontal form-label-left" onSubmit={this.handleSubmit.bind(this)} action={`/topics/${this.props.topic.id}/posts`} method='post' >
+            <div className="form-group">
+            <div className="col-md-4 col-sm-4 col-xs-12">
+              <input className="form-control" ref='postTitle' type='text' name='title' placeholder='title'/>
+            </div>
+            </div>
+            <div className="form-group">
+            <div className="col-md-4 col-sm-4 col-xs-12">
+                <textarea className="form-control" ref='postContent' type='text' name='content' placeholder='content'></textarea>
+            </div>
+            </div>
+            <div className="form-group">
+              <input ref='userID' type='hidden' value={this.props.currentUser.id}/></div>
+              <div className="form-group">
+              <input className="btn btn-primary" type="submit" value="Create Post"/>
+              </div>
+          </form>
       </div>
     );
   }
